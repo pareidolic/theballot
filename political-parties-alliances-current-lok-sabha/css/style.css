@@ -34,19 +34,21 @@
 #legend > .total {
   border-top: 1px dotted #A2A2A2;
   padding-top: 10px;
-  display: none;
-  visibility: hidden;
+}
+
+#legend .total-seats {
+  font-weight: 700;
 }
 
 #legend .alliance-count,
 #legend .alliance-count-outside,
-#legend .total-seats {
+#legend .total-seats-count {
   float: right;
   font-weight: 700;
 }
 
 #legend .alliance-count-outside {
-  color: #A2A2A2;
+  color: #E0E0E0;
 }
 
 table.alliance {

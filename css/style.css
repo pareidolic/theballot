@@ -1,4 +1,4 @@
-@import url("/common.css");
+@import url("/css/common.css");
 /* vim: set sts=2 sw=2 et : */
 
 body {
@@ -40,4 +40,9 @@ a > span#homelink:hover {
 #section-desc {
   color: white;
   font-weight: 100;
+}
+
+#section-desc a#latest-chart {
+  color: #F75819;
+  font-weight: 400;
 }

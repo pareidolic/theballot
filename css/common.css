@@ -26,14 +26,30 @@ a:hover {
   text-decoration: none;
 }
 
+.italics {
+  font-style: italic;
+}
+
 #top-color-bar {
   height: 5px;
   background-color: #062F3F;
 }
 
+/****
+ * BEGIN: Hacks for the footer floating at the bottom
+ ****/
+#wrapper {
+  min-height: 100%;
+  height: 100%;
+  height: auto !important;
+}
+/****
+ * END: Hacks for the footer floating at the bottom
+ ****/
+
 #left-arrow, #right-arrow {
   position: absolute;
-  top: 128px;
+  top: 180px;
   font-family: "source-sans-pro", sans-serif;
   font-size: 60px;
   font-weight: 200;
@@ -44,7 +60,6 @@ a:hover {
   text-decoration: none;
   color: #E2E2E2;
 }
-
 
 #section-title:hover ~ #left-arrow a,
 #section-title:hover ~ #right-arrow a, 
@@ -71,7 +86,7 @@ a:hover {
 }
 
 #header {
-  margin-top: 50px;
+  padding-top: 50px;
   margin-bottom: 85px;
 }
 
@@ -103,7 +118,7 @@ a > span#homelink:hover {
 
 #text {
   margin-bottom: 50px;
-}  
+}
 
 #section-title {
   margin-bottom: 20px;
@@ -118,6 +133,7 @@ a > span#homelink:hover {
   line-height: 1.5em;
   margin-bottom: 20px;
 }
+
 
 #shareme {
   font-family: "source-sans-pro", sans-serif;
@@ -138,6 +154,7 @@ a > span#homelink:hover {
   font-size: 11pt;
   font-weight: 400;
   color: #C0C0C0;
+  margin-bottom: 50px;
 }
 
 #sources a {
@@ -148,89 +165,8 @@ a > span#homelink:hover {
   font-style: italic;
 }
 
-#related {
-  float: left;
-  width: 100%;
-  margin-top: 50px;
-  font-size: 16pt;
-  color: #404040;
-}
-
-#related > span {
-  font-weight: 700;
-  color: #062F3F;
-}
-
 .clearing {
   clear: both;
-}
-
-#footer {
-  width: 100%;
-  height: 240px;
-  clear: both;
-  background-color: #E2E2E2;
-  margin-top: 85px;
-}
-
-#footer-top {
-  float: left;
-  margin-top: 50px;
-  width: 100%;
-  font-size: 14pt;
-  font-weight: 900;
-  color: #F75819;
-  color: black;
-}
-
-.footer-column {
-  float: left;
-  width: 280px;
-}
-
-.footer-column-middle {
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
-.footer-column-left {
-  width: 605px;
-}
-
-.footer-column-right {
-  width: 280px;
-  margin-left: 45px;
-}
-
-#footer-common {
-  float: left;
-  width: 100%;
-  margin-top: 30px;
-
-  font-family: "source-sans-pro", sans-serif;
-  font-size: 11pt;
-  font-weight: 400;
-  color: #404040;
-}
-
-#footer a {
-  color: #404040;
-}
-
-#footer-common > #builtby {
-  float: left;
-  width: 425px;
-}
-
-#footer-common > #license {
-  float: left;
-  width: 80px;
-}
-
-#footer-common > #internal-links {
-  float: left;
-  width: 425px;
-  text-align: right;
 }
 
 #col-1-of-3, #col-2-of-3, #col-3-of-3 {
@@ -242,4 +178,69 @@ a > span#homelink:hover {
 #col-2-of-3 {
   margin-left: 45px;
   margin-right: 45px;
+}
+
+/****
+ * BEGIN: Hacks for the footer floating at the bottom
+ ****/
+#push {
+  padding-top: 10px;
+  /* This should be the same as the footer height */
+  padding-bottom: 10px;
+}
+
+#footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 10px;
+  /* This should be the negative of the footer height */
+  margin-top: -10px;
+}
+/****
+ * END: Hacks for the footer floating at the bottom
+ ****/
+
+#footer {
+  width: 100%;
+  background-color: transparent;
+}
+
+#footer-common {
+  float: left;
+  width: 100%;
+  padding-top: 10px;
+  margin-bottom: 10px;
+
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+  color: #404040;
+}
+
+#footer a {
+  color: #404040;
+}
+
+#footer:not(.not-chart) #footer-common {
+  border-top: 1px solid #C0C0C0;
+}
+
+#footer.not-chart #footer-common {
+  color: #3c8aa7;
+}
+
+#footer.not-chart #footer-common a {
+  color: #3c8aa7;
+}
+
+#footer-common > #internal-links {
+  float: left;
+  width: 850px;
+}
+
+#footer-common > #license {
+  float: left;
+  width: 80px;
+  padding-top: 3px;
 }
