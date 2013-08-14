@@ -1,0 +1,37 @@
+@import url("/css/common.css");
+/* vim: set sts=2 sw=2 et : */
+
+[font-family="'SourceSansPro-Thin'"] {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 200;
+}
+
+[font-family="'SourceSansPro-Light'"] {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+}
+
+[font-family="'SourceSansPro-Regular'"] {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 400;
+}
+
+[font-family="'SourceSansPro-SemiBold'"] {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 600;
+}
+
+[font-family="'SourceSansPro-Bold'"] {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 700;
+}
+
+[font-family="'SourceSansPro-Black'"] {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 900;
+}
+
+#head-chart {
+  width: 930px;
+  margin-bottom: 50px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<!-- vim: set sts=2 sw=2 et tw=0 : -->
+<head>
+  <title>The Ballot</title>
+  <!-- Hello! We're Pareidolic. Pleased to make your acquaintance. -->
+  <link rel="shortcut icon" href="favicon.ico?1" />
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="//use.typekit.net/ahb7pnz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!-- Add email using JS so that 99% of bots can't harvest it -->
+  <script type="text/javascript">
+    function add_email() {
+      document.getElementById("email").innerHTML = "theballot" +
+        String.fromCharCode(64) +
+        "pareidolic.in";
+    }
+  </script>
+</head>
+<body onload="add_email()">
+  <div id="top-color-bar"></div>
+  <div id="wrapper">
+    <div id="header">
+      <a href=""><span id="homelink">The Ballot</span></a>
+      <span id="page-title"></span>
+    </div>
+    <div id="content">
+      <div id="text">
+        <div id="section-title">
+          Disclaimer
+        </div>
+        <div id="section-desc">
+          Welcome to The Ballot!<br/><br/>
+          
+          We hope you found the work we’ve done here
+          interesting and useful. We’ve tried our best to make sure that the
+          information here is compiled from credible sources such as official
+          government websites, but we’re a small team and it isn’t always possible for
+          us to guarantee the correctness or reliability of the information, nor
+          can we ensure that the data used is up-to-date.
+          <br/><br/>
+
+          Please be careful while reusing or quoting the facts and figures
+          published here, and wherever possible, try to verify it from the
+          sources listed on each page. If you find any inaccuracies or blunders,
+          please email us at <span id="email">theballot→pareidolic.in</span>—we’ll do our best to
+          correct things as soon as possible.
+          <br/><br/>
+
+          Thanks!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearing"></div>
+  <!--<div id="footer"></div>-->
+</body>
+</html>

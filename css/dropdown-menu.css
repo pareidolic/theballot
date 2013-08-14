@@ -1,0 +1,34 @@
+/* vim: set sts=2 sw=2 et : */
+/* 
+ * From: http://bavotasan.com/2011/style-select-box-using-only-css/
+ *
+ * Embed `select` in a div, increase size of `select` to be larger than div.
+ * Style div, and make it seem like the div is the `select` tag.
+ */
+#select-control {
+  width: 280px; /* 30% of 930px */
+  height: 34px;
+  overflow: hidden;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 1px;
+  background: url(ic_down_arrow.png) no-repeat right #fff;
+}
+
+#select-control > select {
+  background: transparent;
+  width: 120%;
+  height: 34px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  font-size: 12pt;
+  font-family: "source-sans-pro";
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

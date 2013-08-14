@@ -1,0 +1,245 @@
+/* vim: set sts=2 sw=2 et : */
+* {
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "adelle", serif;
+  color: #404040;
+}
+
+a {
+  text-decoration: underline;
+  color: #404040;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#top-color-bar {
+  height: 5px;
+  background-color: #062F3F;
+}
+
+#left-arrow, #right-arrow {
+  position: absolute;
+  top: 128px;
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 60px;
+  font-weight: 200;
+  line-height: 1ex;
+}
+
+#left-arrow a, #right-arrow a {
+  text-decoration: none;
+  color: #E2E2E2;
+}
+
+
+#section-title:hover ~ #left-arrow a,
+#section-title:hover ~ #right-arrow a, 
+#left-arrow a:hover, #right-arrow a:hover {
+  color: #828282;
+}
+
+#left-arrow {
+  left: -50px;
+}
+
+#right-arrow {
+  right: -50px;
+}
+
+#wrapper, #footer-wrapper {
+  position: relative;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 930px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  margin-top: 50px;
+  margin-bottom: 85px;
+}
+
+#homelink {
+  background-color: #062F3F;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  display: inline-block;
+  font-size: 13pt;
+  font-weight: 700;
+  color: #FFF;
+}
+
+a > span#homelink:hover {
+  background-color: #F75819;
+}
+
+#page-title {
+  float: right;
+  margin-bottom: 5px;
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 13pt;
+  font-weight: 400;
+  color: #A0A0A0;
+}
+
+#text {
+  margin-bottom: 50px;
+}  
+
+#section-title {
+  margin-bottom: 20px;
+  font-size: 40pt;
+  font-weight: 900;
+  line-height: 1em;
+  color: #062F3F;
+}
+
+#section-desc {
+  font-size: 15pt;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+}
+
+#shareme {
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 13pt;
+  font-weight: 400;
+  color: #A0A0A0;
+}
+
+#shareme a {
+  color: #A0A0A0;
+}
+
+#sources {
+  float: left;
+  width: 100%;
+  margin-top: 50px;
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+  color: #C0C0C0;
+}
+
+#sources a {
+  color: #C0C0C0;
+}
+
+#sources a:not(.normal-anchor) {
+  font-style: italic;
+}
+
+#related {
+  float: left;
+  width: 100%;
+  margin-top: 50px;
+  font-size: 16pt;
+  color: #404040;
+}
+
+#related > span {
+  font-weight: 700;
+  color: #062F3F;
+}
+
+.clearing {
+  clear: both;
+}
+
+#footer {
+  width: 100%;
+  height: 240px;
+  clear: both;
+  background-color: #E2E2E2;
+  margin-top: 85px;
+}
+
+#footer-top {
+  float: left;
+  margin-top: 50px;
+  width: 100%;
+  font-size: 14pt;
+  font-weight: 900;
+  color: #F75819;
+  color: black;
+}
+
+.footer-column {
+  float: left;
+  width: 280px;
+}
+
+.footer-column-middle {
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.footer-column-left {
+  width: 605px;
+}
+
+.footer-column-right {
+  width: 280px;
+  margin-left: 45px;
+}
+
+#footer-common {
+  float: left;
+  width: 100%;
+  margin-top: 30px;
+
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+  color: #404040;
+}
+
+#footer a {
+  color: #404040;
+}
+
+#footer-common > #builtby {
+  float: left;
+  width: 425px;
+}
+
+#footer-common > #license {
+  float: left;
+  width: 80px;
+}
+
+#footer-common > #internal-links {
+  float: left;
+  width: 425px;
+  text-align: right;
+}
+
+#col-1-of-3, #col-2-of-3, #col-3-of-3 {
+  float: left;
+  width: 280px;
+  font-size: 11pt;
+}
+
+#col-2-of-3 {
+  margin-left: 45px;
+  margin-right: 45px;
+}

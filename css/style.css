@@ -1,0 +1,43 @@
+@import url("/common.css");
+/* vim: set sts=2 sw=2 et : */
+
+body {
+  background-color: #062F3F;
+}
+
+#homelink {
+  background-color: #F75819;
+  color: #062F3F;
+}
+
+a {
+  color: #FFF;
+}
+
+a > span#homelink:hover {
+  color: #FFF;
+}
+
+#right-arrow a {
+  color: #5893A0;
+}
+
+#section-title:hover ~ #right-arrow a, 
+#right-arrow a:hover {
+  color: #FFF;
+}
+
+#section-title {
+  margin-bottom: 50px;
+  color: #F75819;
+  font-weight: 100;
+}
+
+#section-title > span {
+  font-weight: 900;
+}
+
+#section-desc {
+  color: white;
+  font-weight: 100;
+}

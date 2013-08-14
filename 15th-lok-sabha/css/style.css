@@ -1,0 +1,121 @@
+@import url("/css/common.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+  width: 605px;
+  margin-bottom: 50px;
+}
+
+#legend {
+  float: left;
+  width: 280px;
+  margin-left: 45px;
+  font-size: 11pt;
+}
+
+#legend > div {
+  height: 25px;
+  line-height: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#legend .alliance-icon {
+  margin-right: 10px;
+}
+
+#legend .alliance-name,
+#legend .alliance-name-outside {
+  /* FIXME: Fix wrapping */
+  white-space: nowrap;
+}
+
+#legend > .total {
+  border-top: 1px dotted #A2A2A2;
+  padding-top: 10px;
+  display: none;
+  visibility: hidden;
+}
+
+#legend .alliance-count,
+#legend .alliance-count-outside,
+#legend .total-seats {
+  float: right;
+  font-weight: 700;
+}
+
+#legend .alliance-count-outside {
+  color: #A2A2A2;
+}
+
+table.alliance {
+  float: left;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.alliance td,
+table.alliance th {
+  vertical-align: top;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+tr.alliance-name {
+  color: black;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  height: 1em;
+}
+
+table#alliance-upa > thead > tr {
+  border-bottom: 6px solid #DD8C50;
+}
+
+table#alliance-nda > thead > tr {
+  border-bottom: 6px solid #5E8D9E;
+}
+
+table#alliance-third-front > thead > tr {
+  border-bottom: 6px solid #8DC63F;
+}
+
+table#alliance-other-parties > thead > tr {
+  border-bottom: 6px solid #EFD643;
+}
+
+table#alliance-independents > thead > tr {
+  border-bottom: 6px solid #C1B0AA;
+}
+
+table#alliance-nominated > thead > tr {
+  border-bottom: 6px solid #D8DBA1;
+}
+table.alliance > tbody > tr > td > img {
+  margin-left: 10px;
+  padding-bottom: 2px;
+  vertical-align: middle;
+}
+
+table.alliance > * > tr > td:last-child {
+  text-align: right;
+}
+
+table.alliance > tbody > tr:nth-child(odd) > td {
+  background-color: #fff;
+}
+
+table.alliance > tbody > tr:nth-child(even) > td {
+  background-color: #efefef;
+}
+
+table.alliance > tbody > tr.blank-cell {
+  color: white;
+}
+
+table.alliance > tbody > tr.blank-cell > td {
+  background-color: #fff !important;
+}
