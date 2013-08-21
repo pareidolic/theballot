@@ -151,6 +151,34 @@ a > span#homelink:hover {
   color: #A0A0A0;
 }
 
+/***
+ * BEGIN: Display an error message for old browsers that don't support Inline SVG
+ ***/
+#unsupported-msg {
+  visibility: hidden;
+  display: none;
+  font-size: 24pt;
+  text-align: center;
+}
+
+#unsupported-msg > #sadface {
+  font-size: 48pt;
+  color: #F75819;
+}
+
+html.no-inlinesvg #head-chart {
+  visibility: hidden;
+  display: none;
+}
+
+html.no-inlinesvg #unsupported-msg {
+  visibility: visible;
+  display: inline;
+}
+/***
+ * END: Display an error message for old browsers that don't support Inline SVG
+ ***/
+
 #sources {
   float: left;
   width: 100%;
