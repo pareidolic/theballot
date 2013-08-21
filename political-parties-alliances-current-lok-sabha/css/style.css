@@ -17,8 +17,6 @@
 #legend > div {
   height: 25px;
   line-height: 1em;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 #legend .alliance-icon {
