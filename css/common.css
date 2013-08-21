@@ -90,6 +90,15 @@ a:hover {
   margin-bottom: 85px;
 }
 
+a > span#homelink:hover {
+  background-color: #F75819;
+}
+
+/* Without this, MSIE 7,8 show an underline */
+#header > a {
+  text-decoration: none;
+}
+
 #homelink {
   background-color: #062F3F;
   padding-left: 10px;
@@ -101,10 +110,6 @@ a:hover {
   font-size: 13pt;
   font-weight: 700;
   color: #FFF;
-}
-
-a > span#homelink:hover {
-  background-color: #F75819;
 }
 
 #page-title {

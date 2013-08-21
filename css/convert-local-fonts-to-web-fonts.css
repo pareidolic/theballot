@@ -1,4 +1,3 @@
-@import url("/css/common.css");
 /* vim: set sts=2 sw=2 et : */
 
 [font-family="'SourceSansPro-Thin'"] {
@@ -31,7 +30,37 @@
   font-weight: 900;
 }
 
-#head-chart {
-  width: 930px;
-  margin-bottom: 50px;
+[font-family="'Adelle-Thin'"] {
+  font-family: "adelle", serif;
+  font-weight: 100;
+}
+
+[font-family="'Adelle-Light'"] {
+  font-family: "adelle", serif;
+  font-weight: 300;
+}
+
+[font-family="'Adelle-Regular'"] {
+  font-family: "adelle", serif;
+  font-weight: 400;
+}
+
+[font-family="'Adelle-SemiBold'"] {
+  font-family: "adelle", serif;
+  font-weight: 600;
+}
+
+[font-family="'Adelle-Bold'"] {
+  font-family: "adelle", serif;
+  font-weight: 700;
+}
+
+[font-family="'Adelle-ExtraBold'"] {
+  font-family: "adelle", serif;
+  font-weight: 800;
+}
+
+[font-family="'Adelle-Heavy'"] {
+  font-family: "adelle", serif;
+  font-weight: 900;
 }
