@@ -202,16 +202,46 @@ html.no-inlinesvg #unsupported-msg {
   clear: both;
 }
 
-#col-1-of-3, #col-2-of-3, #col-3-of-3 {
+/* BEGIN: Column layout: [__][_] */
+.double-col-left {
+  float: left;
+  width: 605px;
+  margin-right: 45px;
+}
+
+.single-col-right {
+  float: left;
+  width: 280px;
+}
+/* END: Column layout: [__][_] */
+
+/* BEGIN: Column layout: [_][__] */
+.single-col-left {
+  float: left;
+  width: 280px;
+  margin-right: 45px;
+}
+
+.double-col-right {
+  float: left;
+  width: 605px;
+}
+/* END: Column layout: [_][__] */
+
+/* BEGIN: Column layout: [_][_][_] */
+.col-1-of-3,
+.col-2-of-3,
+.col-3-of-3 {
   float: left;
   width: 280px;
   font-size: 11pt;
 }
 
-#col-2-of-3 {
+.col-2-of-3 {
   margin-left: 45px;
   margin-right: 45px;
 }
+/* END: Column layout: [_][_][_] */
 
 /****
  * BEGIN: Hacks for the footer floating at the bottom
