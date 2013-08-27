@@ -1,0 +1,229 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+}
+
+#pie-charts,
+#sitting-members,
+#india-map,
+#various-stats
+{
+  float: left;
+  margin-bottom: 55px;
+}
+
+/* Pie charts */
+.pie-chart-heading {
+  font-size: 14pt;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+#pie-chart-text > div {
+  margin-bottom: 30px;
+}
+
+#pie-chart-text span#legend1,
+#pie-chart-text span#legend2 {
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: 'source-sans-pro', sans-serif;
+  font-weight: 900;
+  font-size: 14pt;
+  color: white;
+
+  line-height: 1.2ex;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#pie-chart-text span#legend1 {
+  background-color: #598E9B;
+  margin-right: 10px;
+}
+
+#pie-chart-text span#legend2 {
+  background-color: #9BC9CE;
+}
+
+#pie-chart-text > span#legend-text {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2em;
+}
+
+#pie-chart-text > span#legend-text > span#legend-huge-text {
+  display: block;
+  color: #598E9B;
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  font-size: 82pt;
+  line-height: 1.5ex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#pie-chart-text > span#legend-text > span#legend-bold-text {
+  font-weight: 400;
+}
+
+/* Sitting members statistics */
+#sitting-members div#sitting-members-big-text {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#sitting-members div#sitting-members-big-text span {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "source-sans-pro", sans-serif;
+  color: #598E9B;
+}
+
+#sitting-members span.sitting-members-bigger-text1,
+#sitting-members span.sitting-members-bigger-text2 {
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  letter-spacing: 0px;
+  width: 30%;
+}
+
+#sitting-members span.sitting-members-bigger-text1 {
+  text-align: left;
+}
+
+#sitting-members span.sitting-members-bigger-text2 {
+  text-align: right;
+}
+
+#sitting-members span.sitting-members-smaller-text {
+  font-size: 30pt;
+  text-align: center;
+  width: 40%;
+  padding-top: 13px;
+}
+
+#sitting-members div#sitting-members-under-big-text {
+  width: 100%;
+  text-align: center;
+  font-size: 15pt;
+}
+
+#sitting-members div#sitting-members-text {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+}
+
+#sitting-members div#sitting-members-text span {
+  font-weight: 400;
+}
+
+/* India map chart */
+#india-map div#india-map-text {
+  margin-bottom 20px;
+}
+
+#india-map div#india-map-text-1 {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2em;
+}
+
+#india-map div#india-map-text-2 > span {
+  display: inline-block;
+  vertical-align: middle;
+  color: #598E9B;
+  font-family: "source-sans-pro", sans-serif;
+  line-height: 1.5ex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#india-map div#india-map-text-2 > span:first-child {
+  font-weight: 400;
+  font-size: 46pt;
+  width: 70%;
+  text-align: left;
+}
+
+#india-map div#india-map-text-2 > span:last-child {
+  font-weight: 300;
+  font-size: 86pt;
+  width: 30%;
+  text-align: right;
+}
+
+#india-map div#india-map-text-3 {
+  font-weight: 400;
+  font-size: 20pt;
+  line-height: 1.2em;
+}
+
+#india-map div#india-map-legend {
+  color: white;
+  font-size: 11pt;
+  margin-top: 55px;
+}
+
+#india-map div#india-map-legend > div {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 10px;
+}
+
+#india-map div#india-map-legend-none {
+  background-color: #D1D2D4;
+}
+
+#india-map div#india-map-legend-less {
+  background-color: #9BC9CE;
+}
+
+#india-map div#india-map-legend-5 {
+  background-color: #598E9B;
+}
+
+#india-map div#india-map-legend-15 {
+  background-color: #306272;
+}
+
+#india-map div#india-map-legend-more {
+  background-color: #14373F;
+}
+
+/* Various statistics about women in the Lok Sabha */
+#various-stats div {
+  text-align: center;
+}
+
+#various-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #598E9B;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+#various-stats div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+#various-stats div.stat-text span.stat-bold-text {
+  font-weight: 400;
+}
