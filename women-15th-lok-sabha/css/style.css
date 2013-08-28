@@ -30,8 +30,12 @@
   margin-bottom: 30px;
 }
 
-#pie-chart-text span#legend1,
-#pie-chart-text span#legend2 {
+span.percent {
+  color: #9BC9CE;
+}
+
+span.legend-women-box,
+span.legend-men-box {
   display: inline-block;
   letter-spacing: 1px;
   font-family: 'source-sans-pro', sans-serif;
@@ -45,12 +49,12 @@
   padding-right: 10px;
 }
 
-#pie-chart-text span#legend1 {
+span.legend-women-box {
   background-color: #598E9B;
   margin-right: 10px;
 }
 
-#pie-chart-text span#legend2 {
+span.legend-men-box {
   background-color: #9BC9CE;
 }
 
@@ -75,60 +79,6 @@
   font-weight: 400;
 }
 
-/* Sitting members statistics */
-#sitting-members div#sitting-members-big-text {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-#sitting-members div#sitting-members-big-text span {
-  display: inline-block;
-  vertical-align: middle;
-  font-family: "source-sans-pro", sans-serif;
-  color: #598E9B;
-}
-
-#sitting-members span.sitting-members-bigger-text1,
-#sitting-members span.sitting-members-bigger-text2 {
-  font-weight: 300;
-  font-size: 112pt;
-  line-height: 1.5ex;
-  letter-spacing: 0px;
-  width: 30%;
-}
-
-#sitting-members span.sitting-members-bigger-text1 {
-  text-align: left;
-}
-
-#sitting-members span.sitting-members-bigger-text2 {
-  text-align: right;
-}
-
-#sitting-members span.sitting-members-smaller-text {
-  font-size: 30pt;
-  text-align: center;
-  width: 40%;
-  padding-top: 13px;
-}
-
-#sitting-members div#sitting-members-under-big-text {
-  width: 100%;
-  text-align: center;
-  font-size: 15pt;
-}
-
-#sitting-members div#sitting-members-text {
-  font-weight: 300;
-  font-size: 20pt;
-  line-height: 1.2em;
-  margin-bottom: 20px;
-}
-
-#sitting-members div#sitting-members-text span {
-  font-weight: 400;
-}
-
 /* India map chart */
 #india-map div#india-map-text {
   margin-bottom 20px;
@@ -146,8 +96,8 @@
   color: #598E9B;
   font-family: "source-sans-pro", sans-serif;
   line-height: 1.5ex;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 #india-map div#india-map-text-2 > span:first-child {
@@ -225,5 +175,35 @@
 }
 
 #various-stats div.stat-text span.stat-bold-text {
+  font-weight: 400;
+}
+
+/* Sitting members statistics */
+#sitting-members {
+  margin-top: 20px;
+}
+
+#sitting-members div#sitting-members-legend {
+  margin-bottom: 30px;
+}
+
+#sitting-members div#sitting-members-heading {
+  font-weight: 300;
+  font-size: 20pt;
+  margin-bottom: 30px;
+}
+
+#sitting-members div#sitting-members-heading span {
+  font-weight: 400;
+}
+
+#sitting-members div.sitting-members-text {
+  font-weight: 300;
+  font-size: 15pt;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+}
+
+#sitting-members div.sitting-members-text span {
   font-weight: 400;
 }
