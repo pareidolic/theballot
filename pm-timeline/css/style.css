@@ -1,0 +1,167 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  width: 930px;
+  margin-bottom: 50px;
+}
+
+#pm-timeline-chart,
+#pm-pie-charts,
+#pm-term-stats,
+#pm-term-women-compare,
+#pm-office-stats
+{
+  float: left;
+  margin-bottom: 110px;
+}
+
+#pm-office-stats {
+  margin-bottom: 0px;
+}
+
+/* PM pie charts */
+.pie-chart {
+  margin-bottom: 30px;
+}
+
+.pie-chart-heading {
+  font-size: 14pt;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+span.legend-box {
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: 'source-sans-pro', sans-serif;
+  font-weight: 700;
+  font-size: 13pt;
+  color: white;
+
+  line-height: 1ex;
+  padding: 12px;
+  margin-bottom: 15px;
+  margin-right: 12px;
+}
+
+span.legend-congress {
+  background-color: #72b7c8;
+}
+
+span.legend-others {
+  background-color: #E4E4E4;
+}
+
+span.legend-jd {
+  background-color: #c2b49a;
+}
+
+span.legend-jp {
+  background-color: #ffa740;
+}
+
+span.legend-jps {
+  background-color: #d382e7;
+}
+
+span.legend-sjp {
+  background-color: #ffec81;
+}
+
+span.legend-bjp {
+  background-color: #d72f3f;
+}
+
+#pm-pie-charts-text > #legend-text {
+  font-weight: 300;
+  font-size: 21pt;
+  line-height: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 48px;
+}
+
+/* PM term statistics */
+#pm-term-stats div {
+  text-align: center;
+}
+
+#pm-term-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  font-size: 74pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+#pm-term-stats div.stat-number > sup {
+  vertical-align: top;
+  font-weight: 600;
+  font-size: 30%;
+  line-height: 1.5ex;
+}
+
+#pm-term-stats div.stat-number#stat-nehru {
+  color: #0c8ea3;
+}
+
+#pm-term-stats div.stat-number#stat-nanda {
+  color: #72b7c8;
+}
+
+#pm-term-stats div.stat-number#stat-vajpayee {
+  color: #d72f3f;
+}
+
+#pm-term-stats div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+#pm-term-stats div.stat-text span.stat-bold-text {
+  font-weight: 400;
+}
+
+/* Horizontal bar comparing women PM term length */
+#pm-term-women-compare #women-compare-text {
+  margin-top: 30px;
+  padding-left: 225px;
+  font-weight: 300;
+  font-size: 21pt;
+  line-height: 1.2em;
+}
+
+#pm-term-women-compare .women-compare-bold-text {
+  font-weight: 400;
+}
+
+/* Statistics about PMs taking and leaving office */
+#pm-office-stats div {
+  text-align: center;
+}
+
+#pm-office-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+}
+
+#pm-office-stats div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin-top: 10px;
+}
+
+#pm-office-stats div.stat-text span.stat-bold-text {
+  font-weight: 400;
+}
+
+/* Notes and sources */
+

@@ -179,15 +179,33 @@ html.no-inlinesvg #unsupported-msg {
  * END: Display an error message for old browsers that don't support Inline SVG
  ***/
 
-#sources {
+#sources,
+#notes {
   float: left;
   width: 100%;
   margin-top: 50px;
   font-family: "source-sans-pro", sans-serif;
   font-size: 11pt;
   font-weight: 400;
+}
+
+#sources {
   color: #C0C0C0;
   margin-bottom: 50px;
+}
+
+#notes {
+  margin-bottom: 20px;
+}
+
+/* When sources is preceded by notes, remove the top margin */
+#notes + #sources {
+  margin-top: 0px;
+}
+
+#notes p,
+#sources p {
+  margin-bottom: 0.5em;
 }
 
 #sources a {
