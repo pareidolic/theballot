@@ -1,0 +1,177 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 55px;
+}
+
+div.stat-num-text {
+  text-align: center;
+}
+
+div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #598E9B;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 35px;
+}
+
+div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+span.bold-text {
+  font-weight: 400;
+}
+
+div.stat-number span.percent {
+  color: #9BC9CE;
+}
+
+/* Chart showing the average ages of all the Lok sabhas */
+#avg-age-lok-sabhas-chart { }
+
+/* Facts about the average age of the current Lok Sabha */
+#avg-age-lok-sabha > .col-1-of-3 {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2em;
+}
+
+#avg-age-lok-sabha > div.col-3-of-3 > div.stat-number {
+  color: #C0C0C0;
+}
+
+/* Chart showing age distribution in the Lok Sabha */
+#lok-sabha-age-dist .legend {
+  font-size: 14pt;
+  font-weight: 300;
+}
+
+#lok-sabha-age-dist .legend > div {
+  height: 25px;
+  line-height: 1em;
+}
+
+#lok-sabha-age-dist .age-icon {
+  margin-right: 10px;
+}
+
+#lok-sabha-age-dist .age-count {
+  float: right;
+  font-weight: 400;
+}
+
+#lok-sabha-age-dist .total {
+  border-top: 1px dotted #A2A2A2;
+  padding-top: 10px;
+  margin-top: 5px;
+}
+
+/* Facts about ages of Lok Sabha members */
+div.almost-fraction {
+  margin-bottom: 35px;
+}
+
+div.almost-fraction > span {
+  display: inline-block;
+  vertical-align: middle;
+  color: #598E9B;
+  font-family: "source-sans-pro", sans-serif;
+  line-height: 1.5ex;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+div.almost-fraction > span:first-child {
+  font-weight: 400;
+  font-size: 46pt;
+  width: 70%;
+  text-align: left;
+}
+
+div.almost-fraction > span:last-child {
+  font-weight: 300;
+  font-size: 86pt;
+  width: 30%;
+  text-align: right;
+}
+
+#retirement-text {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2em;
+}
+
+#retirement-text > p {
+  margin-bottom: 10px;
+}
+
+#lok-sabha-retirement {
+  margin-top: 20px;
+}
+
+#retirement-labels span {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14pt;
+  color: white;
+
+  line-height: 1.2ex;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#retirement-labels span.label-over60 {
+  background-color: #598E9B;
+}
+
+#retirement-labels span.label-under60 {
+  background-color: #9BC9CE;
+}
+
+/* Chart comparing age distribution of Lok Sabha with India */
+span.legend-lok-sabha,
+span.legend-india {
+  display: inline-block;
+  font-family: 'adelle', serif;
+  font-weight: 400;
+  font-size: 14pt;
+  color: white;
+
+  line-height: 1.2ex;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+span.legend-lok-sabha {
+  background-color: #598E9B;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+span.legend-india {
+  background-color: #C0C0C0;
+  margin-top: 10px;
+}
+
+#lok-sabha-age-compare .legend-subtext {
+  font-weight: 300;
+  font-size: 20pt;
+  margin-top: 10px;
+}
