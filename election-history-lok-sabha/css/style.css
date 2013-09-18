@@ -1,0 +1,151 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 80px;
+}
+
+.bold-text {
+  font-weight: 400;
+}
+
+/* Wedge chart showing Lok Sabha member experience */
+#lok-sabha-xp-dist {
+  position: relative;
+}
+
+#lok-sabha-xp-dist > #wedge-chart-text {
+  position: absolute;
+  right: 0px;
+  width: 465px;
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+#lok-sabha-xp-dist > #wedge-chart-text > p {
+  margin-bottom: 0.5em;
+}
+
+#lok-sabha-xp-dist > #wedge-chart { 
+  padding-top: 20px;
+}
+
+/* Average age vs. terms elected */
+#avg-age-v-terms .chart-text {
+  font-weight: 300;
+  font-size: 22pt;
+  line-height: 1.2em;
+}
+
+/* Statistics about the age */
+#age-stats div {
+  text-align: center;
+}
+
+#age-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+  color: #598E9B;
+}
+
+#age-stats div.stat-number.new-member {
+  color: #9BC9CE;
+}
+
+#age-stats div.stat-number > sup {
+  vertical-align: top;
+  font-weight: 600;
+  font-size: 30%;
+  line-height: 1.7ex;
+}
+
+#age-stats div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+/* Chart comparing age distribution of Lok Sabha with India */
+.legend-india,
+.legend-lok-sabha-first,
+.legend-lok-sabha-all {
+  display: inline-block;
+  font-family: 'adelle', serif;
+  font-weight: 400;
+  font-size: 14pt;
+  color: white;
+
+  line-height: 1.2ex;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.legend-india {
+  background-color: #C0C0C0;
+  margin-top: 5px;
+}
+
+.legend-lok-sabha-first {
+  background-color: #9BC9CE;
+}
+
+.legend-lok-sabha-all {
+  background-color: #598E9B;
+}
+
+#xp-age-dist-compare .legend-subtext {
+  font-weight: 300;
+  font-size: 22pt;
+  line-height: 1.2em;
+  margin-top: 10px;
+}
+
+/* Min/max elected stats */
+div.elected-stats-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin-bottom: 45px !important;
+}
+
+div.elected-stats-text p {
+  margin-bottom: 0.3em;
+}
+
+.lok-sabha-term-boxes {
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.lok-sabha-term-boxes > span {
+  display: inline-block;
+  background-color: #E4E4E4;
+  font-family: 'source-sans-pro', serif;
+  font-weight: 400;
+  font-size: 16pt;
+
+  text-align: center;
+  line-height: 1.2ex;
+  width: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 2px;
+}
+
+.lok-sabha-term-boxes > span.elected {
+  color: white;
+  background-color: #598E9B;
+}
