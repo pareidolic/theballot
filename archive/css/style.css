@@ -1,0 +1,49 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+.archive-post {
+  float: left;
+  margin-bottom: 50px;
+}
+
+.archive-post .single-col-left {
+  font-family: "source-sans-pro", sans-serif;
+  line-height: 1.3em;
+}
+
+.archive-post .week,
+.archive-post .date {
+  color: #A0A0A0;
+}
+
+.archive-post .week {
+  font-weight: 300;
+  font-size: 14pt;
+  margin-top: 15px;
+}
+
+.archive-post .date {
+  font-weight: 700;
+  font-size: 13pt;
+}
+
+.archive-post .title {
+  font-size: 27pt;
+  font-weight: 900;
+  line-height: 1.1em;
+  margin-bottom: 15px;
+  color: #062F3F;
+}
+
+.archive-post .title a {
+  color: #062F3F;
+  text-decoration: none;
+}
+
+.archive-post .title a:hover {
+  color: #F75819;
+}
+
+.archive-post .desc {
+}

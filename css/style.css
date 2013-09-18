@@ -10,11 +10,25 @@ body {
   color: #062F3F;
 }
 
-a {
+a > span#homelink:hover {
   color: #FFF;
 }
 
-a > span#homelink:hover {
+#bloglink,
+#archivelink {
+  display: none;
+  color: #F75819;
+  background-color: #062F3F;
+  border-color: #F75819;
+}
+
+a > span#bloglink:hover,
+a > span#archivelink:hover {
+  background-color: #F75819;
+  color: #062F3F;
+}
+
+a {
   color: #FFF;
 }
 
