@@ -90,13 +90,18 @@ a:hover {
   margin-bottom: 85px;
 }
 
-a > span#homelink:hover {
-  background-color: #F75819;
-}
-
 /* Without this, MSIE 7,8 show an underline */
 #header > a {
   text-decoration: none;
+}
+
+#homelink,
+#archivelink,
+#bloglink {
+  display: inline-block;
+  font-size: 13pt;
+  font-weight: 700;
+  color: #FFF;
 }
 
 #homelink {
@@ -105,11 +110,29 @@ a > span#homelink:hover {
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
 
-  display: inline-block;
-  font-size: 13pt;
-  font-weight: 700;
-  color: #FFF;
+#bloglink,
+#archivelink {
+  color: #062F3F;
+  background-color: white;
+  border: 2px solid #062F3F;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  float: right;
+  margin-left: 10px;
+}
+
+a > span#homelink:hover {
+  background-color: #F75819;
+}
+
+a > span#archivelink:hover,
+a > span#bloglink:hover {
+  background-color: #062F3F;
+  color: white;
 }
 
 #page-title {
@@ -118,6 +141,10 @@ a > span#homelink:hover {
   font-family: "source-sans-pro", sans-serif;
   font-size: 13pt;
   font-weight: 400;
+  color: #A0A0A0;
+}
+
+#page-title a {
   color: #A0A0A0;
 }
 
@@ -139,15 +166,14 @@ a > span#homelink:hover {
   margin-bottom: 20px;
 }
 
-
-#shareme {
+.shareme {
   font-family: "source-sans-pro", sans-serif;
   font-size: 13pt;
   font-weight: 400;
   color: #A0A0A0;
 }
 
-#shareme a {
+.shareme a {
   color: #A0A0A0;
 }
 
