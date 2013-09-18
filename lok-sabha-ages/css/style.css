@@ -162,12 +162,12 @@ span.legend-india {
 span.legend-lok-sabha {
   background-color: #598E9B;
   margin-right: 10px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 span.legend-india {
   background-color: #C0C0C0;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 #lok-sabha-age-compare .legend-subtext {
