@@ -16,7 +16,6 @@ a > span#homelink:hover {
 
 #bloglink,
 #archivelink {
-  display: none;
   color: #F75819;
   background-color: #062F3F;
   border-color: #F75819;
