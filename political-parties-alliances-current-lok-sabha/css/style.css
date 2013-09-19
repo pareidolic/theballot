@@ -14,6 +14,11 @@
   font-size: 11pt;
 }
 
+#parties-detail {
+  float: left;
+  margin-bottom: 45px;
+}
+
 #legend > div {
   height: 25px;
   line-height: 1em;

@@ -3,22 +3,13 @@
 /* vim: set sts=2 sw=2 et : */
 
 #head-chart {
+  float: left;
   width: 930px;
-  margin-bottom: 50px;
 }
 
-#pm-timeline-chart,
-#pm-pie-charts,
-#pm-term-stats,
-#pm-term-women-compare,
-#pm-office-stats
-{
+#head-chart > div {
   float: left;
   margin-bottom: 110px;
-}
-
-#pm-office-stats {
-  margin-bottom: 0px;
 }
 
 /* PM pie charts */
@@ -162,6 +153,3 @@ span.legend-bjp {
 #pm-office-stats div.stat-text span.stat-bold-text {
   font-weight: 400;
 }
-
-/* Notes and sources */
-
