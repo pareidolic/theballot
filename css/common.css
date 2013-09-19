@@ -135,19 +135,6 @@ a > span#bloglink:hover {
   color: white;
 }
 
-#page-title {
-  float: right;
-  margin-bottom: 5px;
-  font-family: "source-sans-pro", sans-serif;
-  font-size: 13pt;
-  font-weight: 400;
-  color: #A0A0A0;
-}
-
-#page-title a {
-  color: #A0A0A0;
-}
-
 #text {
   margin-bottom: 50px;
 }
