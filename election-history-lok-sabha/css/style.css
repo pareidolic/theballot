@@ -26,7 +26,7 @@
   width: 465px;
   font-size: 15pt;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #lok-sabha-xp-dist > #wedge-chart-text > p {
@@ -41,7 +41,7 @@
 #avg-age-v-terms .chart-text {
   font-weight: 300;
   font-size: 22pt;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 /* Statistics about the age */
@@ -72,7 +72,7 @@
 #age-stats div.stat-text {
   font-size: 15pt;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 /* Chart comparing age distribution of Lok Sabha with India */
@@ -109,7 +109,7 @@
 #xp-age-dist-compare .legend-subtext {
   font-weight: 300;
   font-size: 22pt;
-  line-height: 1.2em;
+  line-height: 1.2;
   margin-top: 10px;
 }
 
@@ -117,7 +117,7 @@
 div.elected-stats-text {
   font-size: 15pt;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.2;
   margin-bottom: 45px !important;
 }
 

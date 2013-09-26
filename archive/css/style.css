@@ -9,7 +9,7 @@
 
 .archive-post .single-col-left {
   font-family: "source-sans-pro", sans-serif;
-  line-height: 1.3em;
+  line-height: 1.3;
 }
 
 .archive-post .week,
@@ -31,7 +31,7 @@
 .archive-post .title {
   font-size: 27pt;
   font-weight: 900;
-  line-height: 1.1em;
+  line-height: 1.1;
   margin-bottom: 15px;
   color: #062F3F;
 }

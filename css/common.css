@@ -143,13 +143,13 @@ a > span#bloglink:hover {
   margin-bottom: 20px;
   font-size: 40pt;
   font-weight: 900;
-  line-height: 1em;
+  line-height: 1;
   color: #062F3F;
 }
 
 #section-desc {
   font-size: 15pt;
-  line-height: 1.5em;
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 

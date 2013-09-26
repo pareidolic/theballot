@@ -71,7 +71,7 @@ span.legend-bjp {
 #pm-pie-charts-text > #legend-text {
   font-weight: 300;
   font-size: 21pt;
-  line-height: 1.2em;
+  line-height: 1.2;
   margin-top: 10px;
   margin-bottom: 48px;
 }
@@ -111,7 +111,7 @@ span.legend-bjp {
 #pm-term-stats div.stat-text {
   font-size: 15pt;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #pm-term-stats div.stat-text span.stat-bold-text {
@@ -124,7 +124,7 @@ span.legend-bjp {
   padding-left: 225px;
   font-weight: 300;
   font-size: 21pt;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #pm-term-women-compare .women-compare-bold-text {
@@ -146,7 +146,7 @@ span.legend-bjp {
 #pm-office-stats div.stat-text {
   font-size: 15pt;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.2;
   margin-top: 10px;
 }
 

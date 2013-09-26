@@ -27,7 +27,7 @@ div.stat-number {
 div.stat-text {
   font-size: 15pt;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 span.bold-text {
@@ -45,7 +45,7 @@ div.stat-number span.percent {
 #avg-age-lok-sabha > .col-1-of-3 {
   font-weight: 300;
   font-size: 20pt;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #avg-age-lok-sabha > div.col-3-of-3 > div.stat-number {
@@ -60,7 +60,7 @@ div.stat-number span.percent {
 
 #lok-sabha-age-dist .legend > div {
   height: 25px;
-  line-height: 1em;
+  line-height: 1;
 }
 
 #lok-sabha-age-dist .age-icon {
@@ -110,7 +110,7 @@ div.almost-fraction > span:last-child {
 #retirement-text {
   font-weight: 300;
   font-size: 20pt;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #retirement-text > p {

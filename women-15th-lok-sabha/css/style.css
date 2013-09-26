@@ -61,7 +61,7 @@ span.legend-men-box {
 #pie-chart-text > span#legend-text {
   font-weight: 300;
   font-size: 20pt;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #pie-chart-text > span#legend-text > span#legend-huge-text {
@@ -87,7 +87,7 @@ span.legend-men-box {
 #india-map div#india-map-text-1 {
   font-weight: 300;
   font-size: 20pt;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #india-map div#india-map-text-2 > span {
@@ -117,7 +117,7 @@ span.legend-men-box {
 #india-map div#india-map-text-3 {
   font-weight: 400;
   font-size: 20pt;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #india-map div#india-map-legend {
@@ -171,7 +171,7 @@ span.legend-men-box {
 #various-stats div.stat-text {
   font-size: 15pt;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.2;
 }
 
 #various-stats div.stat-text span.stat-bold-text {
@@ -200,7 +200,7 @@ span.legend-men-box {
 #sitting-members div.sitting-members-text {
   font-weight: 300;
   font-size: 15pt;
-  line-height: 1.2em;
+  line-height: 1.2;
   margin-bottom: 20px;
 }
 
