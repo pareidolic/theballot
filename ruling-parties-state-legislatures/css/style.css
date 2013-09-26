@@ -1,0 +1,212 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 80px;
+}
+
+.bold-text {
+  font-weight: 400;
+}
+
+/* Statistics about the states */
+#state-stats div {
+  text-align: center;
+}
+
+#state-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #404040;
+  font-weight: 300;
+  font-size: 136pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+#state-stats div.stat-text {
+  font-size: 16pt;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+#state-stats div.stat-side-text {
+  font-weight: 300;
+  font-size: 20.5pt;
+  line-height: 1.2;
+  margin-top: -0.4em;
+
+  text-align: left;
+}
+
+/* India map */
+#india-map {
+  position: relative;
+}
+
+#india-map #map-title {
+  position: absolute;
+  right: 0px;
+  width: 280px;
+  padding-top: 80px;
+
+  font-family: "source-sans-pro", sans-serif;
+  color: #404040;
+  font-size: 18pt;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+span.legend-box {
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: 'source-sans-pro', sans-serif;
+  font-weight: 900;
+  font-size: 11pt;
+  color: white;
+
+  line-height: 1.1;
+  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 8px;
+  margin-right: 6px;
+}
+
+#india-map-legend > span:first-child {
+  margin-top: 10px;
+}
+
+span.legend-box.extra-space {
+  margin-bottom: 32px;
+}
+
+span.legend-box.aiadmk { background-color: #EAC0DB; }
+span.legend-box.tmc    { background-color: #BDBEC0; }
+span.legend-box.bjd    { background-color: #b89aae; }
+span.legend-box.bjp    { background-color: #9B8579; }
+span.legend-box.cpim   { background-color: #D6B2CE; }
+span.legend-box.inc    { background-color: #1c4958; }
+span.legend-box.nc     { background-color: #ACD7D8; }
+span.legend-box.jdu    { background-color: #CCEAEC; }
+span.legend-box.jmm    { background-color: #BBA7A1; }
+span.legend-box.npf    { background-color: #4C777D; }
+span.legend-box.sad    { background-color: #E2CCC8; }
+span.legend-box.sdf    { background-color: #326373; }
+span.legend-box.sp     { background-color: #66A3AA; }
+
+/* Party statistics */
+#party-stats div {
+  text-align: center;
+}
+
+#party-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #404040;
+  font-weight: 300;
+  font-size: 82pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+#party-stats div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+#party-stats div#stat-1 .stat-number {
+  color: #306272;
+}
+
+#party-stats div#stat-2 .stat-number {
+  color: #9b8579;
+}
+
+/* Pie chart with detail */
+span.legend-box.upa { background-color: #326373; }
+span.legend-box.nda { background-color: #7c6a61; }
+span.legend-box.third { background-color: #9B7C91; }
+span.legend-box.other { background-color: #bcbec0; }
+
+#party-chart-legend > span:last-child {
+  margin-bottom: 20px;
+}
+
+#party-detail-chart #party-chart-desc {
+  font-weight: 300;
+  font-size: 22pt;
+  line-height: 1.2;
+}
+
+#party-detail-chart #party-chart-desc p {
+  margin-bottom: 0.5em;
+}
+
+/* party-cm-table */
+table.party {
+  float: left;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.party td,
+table.party th {
+  vertical-align: top;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+tr.party-name {
+  color: black;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  height: 1em;
+}
+
+table.party.aiadmk > thead > tr { border-bottom: 6px solid #EAC0DB; }
+table.party.tmc    > thead > tr { border-bottom: 6px solid #BDBEC0; }
+table.party.bjd    > thead > tr { border-bottom: 6px solid #b89aae; }
+table.party.bjp    > thead > tr { border-bottom: 6px solid #9B8579; }
+table.party.cpim   > thead > tr { border-bottom: 6px solid #D6B2CE; }
+table.party.inc    > thead > tr { border-bottom: 6px solid #1c4958; }
+table.party.nc     > thead > tr { border-bottom: 6px solid #ACD7D8; }
+table.party.jdu    > thead > tr { border-bottom: 6px solid #CCEAEC; }
+table.party.jmm    > thead > tr { border-bottom: 6px solid #BBA7A1; }
+table.party.npf    > thead > tr { border-bottom: 6px solid #4C777D; }
+table.party.sad    > thead > tr { border-bottom: 6px solid #E2CCC8; }
+table.party.sdf    > thead > tr { border-bottom: 6px solid #326373; }
+table.party.sp     > thead > tr { border-bottom: 6px solid #66A3AA; }
+
+table.party > tbody > tr > td > img {
+  margin-left: 10px;
+  padding-bottom: 2px;
+  vertical-align: middle;
+}
+
+table.party > * > tr > td:last-child {
+  text-align: right;
+}
+
+table.party > tbody > tr:nth-child(odd) > td {
+  background-color: #fff;
+}
+
+table.party > tbody > tr:nth-child(even) > td {
+  background-color: #efefef;
+}
+
+table.party > tbody > tr.blank-cell {
+  color: white;
+}
+
+table.party > tbody > tr.blank-cell > td {
+  background-color: #fff !important;
+}

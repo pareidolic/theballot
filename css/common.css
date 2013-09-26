@@ -229,6 +229,16 @@ html.no-inlinesvg #unsupported-msg {
   font-style: italic;
 }
 
+#related {
+  margin-bottom: 50px;
+  font-size: 15pt;
+}
+
+#related > span {
+  color: #062F3F;
+  font-weight: 700;
+}
+
 .clearing {
   clear: both;
 }
@@ -273,6 +283,18 @@ html.no-inlinesvg #unsupported-msg {
   margin-right: 45px;
 }
 /* END: Column layout: [_][_][_] */
+
+/* BEGIN: Column layout: [__][__] */
+.col-1-of-2,
+.col-2-of-2 {
+  float: left;
+  width: 442.5px;
+}
+
+.col-1-of-2 {
+  margin-right: 45px;
+}
+/* END: Column layout: [__][__] */
 
 /****
  * BEGIN: Hacks for the footer floating at the bottom
