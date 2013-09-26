@@ -2,6 +2,11 @@
 @import url("/css/convert-local-fonts-to-web-fonts.css");
 /* vim: set sts=2 sw=2 et : */
 
+#archivelink {
+  color: #FFF;
+  background-color: #062F3F;
+}
+
 .archive-post {
   float: left;
   margin-bottom: 50px;
