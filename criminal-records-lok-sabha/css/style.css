@@ -1,0 +1,187 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 80px;
+}
+
+.bold-text {
+  font-weight: 400;
+}
+
+/* Lok Sabha cases chart */
+div#lok-sabha-cases {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#lok-sabha-cases > span {
+  display: inline-block;
+  height: 200px;
+}
+
+#lok-sabha-cases > span.not-accused {
+  background-color: #9BC9CE;
+  width: 71.6%;
+}
+
+#lok-sabha-cases > span.accused {
+  background-color: #306272;
+  width: 28%;
+}
+
+#lok-sabha-cases > span.convicted {
+  background-color: #d72f3f;
+  width: 0.3%;
+}
+
+/* Cases, Lok Sabha */
+#lok-sabha-cases-stats {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2;
+}
+
+#lok-sabha-cases-stats span.accused   { color: #306272; }
+#lok-sabha-cases-stats span.convicted { color: #d72f3f; }
+
+/* Cases against men and women */
+#cases-men-women .single-col-right {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2;
+}
+
+#cases-men-women > .double-col-left {
+  padding-top: 10px;
+}
+
+#cases-men-women > .double-col-left span {
+  display: inline-block;
+  height: 60px;
+}
+
+#cases-men-women .accused     { background-color: #306272; }
+#cases-men-women .not-accused { background-color: #9BC9CE; }
+#cases-men-women .men   { width: 89%; margin-bottom: 20px; }
+#cases-men-women .women { width: 11%; float: right; }
+#cases-men-women .men .accused { width: 30%; }
+#cases-men-women .men .not-accused { width: 70%; }
+#cases-men-women .women .accused { width: 17%; }
+#cases-men-women .women .not-accused { width: 83%; }
+
+/* Cases against cabinet ministers */
+#cabinet-cases {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2;
+}
+
+#cabinet-cases .single-col-right > span {
+  display: inline-block;
+  background-color: #9BC9CE;
+  width: 5px;
+  margin-right: 3px;
+  height: 2.2em;
+}
+
+#cabinet-cases .single-col-right > span.accused {
+  background-color: #306272;
+}
+
+/* India map chart */
+#india-map div#india-map-text {
+  margin-bottom 20px;
+}
+
+#india-map div#india-map-text-1 {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2;
+}
+
+#india-map div#india-map-legend {
+  color: white;
+  font-size: 11pt;
+  margin-top: 55px;
+}
+
+#india-map div#india-map-legend > div {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 10px;
+}
+
+#india-map-legend-none    { background-color: #D1D2D4; }
+#india-map-legend-less-10 { background-color: #9BC9CE; }
+#india-map-legend-10-25   { background-color: #598E9B; }
+#india-map-legend-26-50   { background-color: #306272; }
+#india-map-legend-more-50 { background-color: #14373F; }
+
+#india-heat-map .andaman        path { fill: #14373F; } /* 100% */
+#india-heat-map .andhra         path { fill: #306272; } /* 26% */
+#india-heat-map .arunachal      path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .assam          path { fill: #598E9B; } /* 14% */
+#india-heat-map .bihar          path { fill: #306272; } /* 42 */
+#india-heat-map .chandigarh     path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .chhattisgarh   path { fill: #598E9B; } /* 16% */
+#india-heat-map .dadra-haveli   path { fill: #14373F; } /* 100% */
+#india-heat-map .daman-and-diu  path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .delhi          path { fill: #598E9B; } /* 14% */
+#india-heat-map .goa            path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .gujarat        path { fill: #306272; } /* 38% */
+#india-heat-map .haryana        path { fill: #598E9B; } /* 20% */
+#india-heat-map .himachal       path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .jammu-kashmir  path { fill: #598E9B; } /* 16% */
+#india-heat-map .jharkhand      path { fill: #14373F; } /* 54% */
+#india-heat-map .karnataka      path { fill: #598E9B; } /* 19% */
+#india-heat-map .kerala         path { fill: #306272; } /* 38% */
+#india-heat-map .lakshwadeep    path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .madhya-pradesh path { fill: #598E9B; } /* 14% */
+#india-heat-map .maharashtra    path { fill: #14373F; } /* 52% */
+#india-heat-map .manipur        path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .meghalaya      path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .mizoram        path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .nagaland       path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .orissa         path { fill: #598E9B; } /* 24% */
+#india-heat-map .pondicherry    path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .punjab         path { fill: #9BC9CE; } /* 7% */
+#india-heat-map .rajasthan      path { fill: #9BC9CE; } /* 8% */
+#india-heat-map .sikkim         path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .tamil-nadu     path { fill: #306272; } /* 28% */
+#india-heat-map .tripura        path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .uttar-pradesh  path { fill: #306272; } /* 39% */
+#india-heat-map .uttarakhand    path { fill: #598E9B; } /* 20% */
+#india-heat-map .west-bengal    path { fill: #598E9B; } /* 14% */
+
+/* Various statistics about women in the Lok Sabha */
+#various-stats div {
+  text-align: center;
+}
+
+#various-stats span.percent {
+  color: #9BC9CE;
+}
+
+#various-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #598E9B;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+#various-stats div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+}
