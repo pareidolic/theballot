@@ -18,12 +18,12 @@
 /* Lok Sabha cases chart */
 div#lok-sabha-cases {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 #lok-sabha-cases > span {
   display: inline-block;
-  height: 200px;
+  height: 100px;
 }
 
 #lok-sabha-cases > span.not-accused {
@@ -48,50 +48,66 @@ div#lok-sabha-cases {
   line-height: 1.2;
 }
 
-#lok-sabha-cases-stats span.accused   { color: #306272; }
-#lok-sabha-cases-stats span.convicted { color: #d72f3f; }
+#lok-sabha-cases-stats .accused   { color: #306272 !important; }
+#lok-sabha-cases-stats .convicted { color: #d72f3f !important; }
+#lok-sabha-cases-stats .served    { color: #404040 !important; }
 
-/* Cases against men and women */
-#cases-men-women .single-col-right {
+/* Party-wise case stats in the Lok Sabha */
+div#party-wise-cases {
+  margin-bottom: 50px;
+}
+
+#party-wise-cases .single-col-right {
   font-weight: 300;
   font-size: 20pt;
   line-height: 1.2;
 }
 
-#cases-men-women > .double-col-left {
-  padding-top: 10px;
+#lok-sabha-cases-stats div,
+#party-wise-case-stats div {
+  text-align: center;
 }
 
-#cases-men-women > .double-col-left span {
-  display: inline-block;
-  height: 60px;
+#lok-sabha-cases-stats span.percent,
+#party-wise-case-stats span.percent {
+  color: #9BC9CE;
 }
 
-#cases-men-women .accused     { background-color: #306272; }
-#cases-men-women .not-accused { background-color: #9BC9CE; }
-#cases-men-women .men   { width: 89%; margin-bottom: 20px; }
-#cases-men-women .women { width: 11%; float: right; }
-#cases-men-women .men .accused { width: 30%; }
-#cases-men-women .men .not-accused { width: 70%; }
-#cases-men-women .women .accused { width: 17%; }
-#cases-men-women .women .not-accused { width: 83%; }
+#lok-sabha-cases-stats div.stat-number,
+#party-wise-case-stats div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #306272;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+#lok-sabha-cases-stats div.stat-text,
+#party-wise-case-stats div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+}
 
 /* Cases against cabinet ministers */
-#cabinet-cases {
+div#cabinet-cases {
   font-weight: 300;
   font-size: 20pt;
   line-height: 1.2;
+  margin-bottom: 100px;
 }
 
-#cabinet-cases .single-col-right > span {
+#cabinet-cases .single-col-left > span {
   display: inline-block;
   background-color: #9BC9CE;
   width: 5px;
   margin-right: 3px;
-  height: 2.2em;
+  height: 3.3em;
+  margin-top: 0.2em;
 }
 
-#cabinet-cases .single-col-right > span.accused {
+#cabinet-cases .single-col-left > span.accused {
   background-color: #306272;
 }
 
@@ -134,7 +150,8 @@ div#lok-sabha-cases {
 #india-heat-map .chandigarh     path { fill: #D1D2D4; } /* 0% */
 #india-heat-map .chhattisgarh   path { fill: #598E9B; } /* 16% */
 #india-heat-map .dadra-haveli   path { fill: #14373F; } /* 100% */
-#india-heat-map .daman-and-diu  path { fill: #D1D2D4; } /* 0% */
+#india-heat-map .daman-and-diu  path,
+#india-heat-map .daman-and-diu  rect { fill: #D1D2D4; } /* 0% */
 #india-heat-map .delhi          path { fill: #598E9B; } /* 14% */
 #india-heat-map .goa            path { fill: #D1D2D4; } /* 0% */
 #india-heat-map .gujarat        path { fill: #306272; } /* 38% */
@@ -161,27 +178,3 @@ div#lok-sabha-cases {
 #india-heat-map .uttar-pradesh  path { fill: #306272; } /* 39% */
 #india-heat-map .uttarakhand    path { fill: #598E9B; } /* 20% */
 #india-heat-map .west-bengal    path { fill: #598E9B; } /* 14% */
-
-/* Various statistics about women in the Lok Sabha */
-#various-stats div {
-  text-align: center;
-}
-
-#various-stats span.percent {
-  color: #9BC9CE;
-}
-
-#various-stats div.stat-number {
-  font-family: "source-sans-pro", sans-serif;
-  color: #598E9B;
-  font-weight: 300;
-  font-size: 112pt;
-  line-height: 1.5ex;
-  margin-bottom: 30px;
-}
-
-#various-stats div.stat-text {
-  font-size: 15pt;
-  font-weight: 300;
-  line-height: 1.2;
-}
