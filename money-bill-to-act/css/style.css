@@ -1,0 +1,14 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+/* Ask browsers to shift lines to align with pixels if possible
+ * https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering */
+polyline, line {
+  shape-rendering: crispEdges;
+}
+
+#head-chart {
+  width: 930px;
+  margin-bottom: 50px;
+}
