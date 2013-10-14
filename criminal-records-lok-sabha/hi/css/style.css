@@ -1,0 +1,17 @@
+@import url("../../css/style.css");
+@import url("/common/css/convert-local-fonts-to-web-fonts-hi.css");
+/* vim: set sts=2 sw=2 et : */
+
+.bold-text {
+  font-family: "Fedra Hindi Demi";
+  font-style: normal;
+  font-weight: bold;
+  font-stretch: normal;
+}
+
+body {
+  font-family: "Fedra Hindi Light";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
