@@ -13,6 +13,13 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="/js/modernizer.js"></script>
   <script type="text/javascript">
+    function add_email() {
+      document.getElementById("email").innerHTML = "<a href='mailto:theballot" +
+        String.fromCharCode(64) +
+        "pareidolic.in'>Contact</a>";
+    }
+
+    window.onload = add_email;
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-43617415-1']);
