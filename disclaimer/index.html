@@ -8,16 +8,19 @@
   <link rel="shortcut icon" href="/favicon.ico?1" />
   <link rel="image_src" href="/banners/the-b.png" />
   <meta property="og:image" content="http://theballot.in/banners/the-b.png" />
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="//use.typekit.net/ahb7pnz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <!-- Add email using JS so that 99% of bots can't harvest it -->
   <script type="text/javascript">
     function add_email() {
-      document.getElementById("email").innerHTML = "theballot" +
+      document.getElementById("email-text").innerHTML = "theballot" +
         String.fromCharCode(64) +
         "pareidolic.in";
+      document.getElementById("email").innerHTML = "<a href='mailto:theballot" +
+        String.fromCharCode(64) +
+        "pareidolic.in'>Contact</a>";
     }
 
     window.onload = add_email;
@@ -60,7 +63,7 @@
           Please be careful while reusing or quoting the facts and figures
           published here, and wherever possible, try to verify it from the
           sources listed on each page. If you find any inaccuracies or blunders,
-          please email us at <span id="email">theballot→pareidolic.in</span>—we’ll do our best to
+          please email us at <i id="email-text">theballot→pareidolic.in</i>—we’ll do our best to
           correct things as soon as possible.
           <br/><br/>
 
