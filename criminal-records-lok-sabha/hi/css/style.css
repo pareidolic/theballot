@@ -1,17 +1,18 @@
 @import url("../../css/style.css");
-@import url("/common/css/convert-local-fonts-to-web-fonts-hi.css");
+@import url("/css/hi/common.css");
+@import url("/css/hi/convert-local-fonts-to-web-fonts.css");
 /* vim: set sts=2 sw=2 et : */
 
-strong {
-  font-family: "Fedra Hindi Demi";
-  font-style: normal;
-  font-weight: bold;
-  font-stretch: normal;
+#party-wise-cases .single-col-right {
+  font-size: 25pt;
+  line-height: 1.3;
+  margin-top: -3px;
 }
 
-body {
-  font-family: "Fedra Hindi Light";
-  font-style: normal;
-  font-weight: normal;
-  font-stretch: normal;
+#cabinet-cases .double-col-right {
+  font-size: 21pt;
+}
+
+#india-map-text-1 {
+  font-size: 21pt !important;
 }
