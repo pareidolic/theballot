@@ -54,14 +54,6 @@ h1 {
   margin-bottom: 0.7em;
 }
 
-#notes cite a,
-#sources cite a {
-  font-family: "source-sans-pro", sans-serif;
-  font-style: italic !important;
-  font-weight: 400;
-  line-height: 1;
-}
-
 #sources a:not(.normal-anchor) {
   font-style: normal;
 }

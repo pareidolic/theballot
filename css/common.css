@@ -57,7 +57,8 @@ strong {
   font-style: normal;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 1.5em;
+  line-height: 1.6em;
+  vertical-align: middle;
 }
 
 .nav-2 {
@@ -160,8 +161,8 @@ strong {
 
 #englishlink,
 #hindilink {
-  color: #A0A0A0;
-  border: 2px solid #A0A0A0;
+  color: #C0C0C0;
+  border: 2px solid #C0C0C0;
 }
 
 #bloglink,
@@ -176,7 +177,7 @@ a > span#homelink:hover {
 
 a > span#englishlink:hover,
 a > span#hindilink:hover {
-  background-color: #A0A0A0;
+  background-color: #C0C0C0;
   color: white;
 }
 
@@ -269,6 +270,16 @@ html.no-inlinesvg #unsupported-msg {
 
 #sources a:not(.normal-anchor) {
   font-style: italic;
+}
+
+#notes cite,
+#sources cite,
+#notes cite a,
+#sources cite a {
+  font-family: "source-sans-pro", sans-serif;
+  font-style: italic !important;
+  font-weight: 400;
+  line-height: 1;
 }
 
 #relatedlinks {
