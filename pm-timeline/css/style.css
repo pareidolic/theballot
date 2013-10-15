@@ -114,10 +114,6 @@ span.legend-bjp {
   line-height: 1.2;
 }
 
-#pm-term-stats div.stat-text span.stat-bold-text {
-  font-weight: 400;
-}
-
 /* Horizontal bar comparing women PM term length */
 #pm-term-women-compare #women-compare-text {
   margin-top: 30px;
@@ -125,10 +121,6 @@ span.legend-bjp {
   font-weight: 300;
   font-size: 21pt;
   line-height: 1.2;
-}
-
-#pm-term-women-compare .women-compare-bold-text {
-  font-weight: 400;
 }
 
 /* Statistics about PMs taking and leaving office */
@@ -140,7 +132,7 @@ span.legend-bjp {
   font-family: "source-sans-pro", sans-serif;
   font-weight: 300;
   font-size: 112pt;
-  line-height: 1.5ex;
+  line-height: 1.4ex;
 }
 
 #pm-office-stats div.stat-text {
@@ -148,8 +140,4 @@ span.legend-bjp {
   font-weight: 300;
   line-height: 1.2;
   margin-top: 10px;
-}
-
-#pm-office-stats div.stat-text span.stat-bold-text {
-  font-weight: 400;
 }

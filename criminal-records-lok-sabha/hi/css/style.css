@@ -2,7 +2,7 @@
 @import url("/common/css/convert-local-fonts-to-web-fonts-hi.css");
 /* vim: set sts=2 sw=2 et : */
 
-.bold-text {
+strong {
   font-family: "Fedra Hindi Demi";
   font-style: normal;
   font-weight: bold;

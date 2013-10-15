@@ -58,6 +58,7 @@ table.alliance {
   float: left;
   width: 100%;
   border-collapse: collapse;
+  font-size: 11pt;
 }
 
 table.alliance td,

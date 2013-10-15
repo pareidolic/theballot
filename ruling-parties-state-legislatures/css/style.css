@@ -11,10 +11,6 @@
   margin-bottom: 80px;
 }
 
-.bold-text {
-  font-weight: 400;
-}
-
 /* Statistics about the states */
 #state-stats div {
   text-align: center;
@@ -149,6 +145,10 @@ span.legend-box.other { background-color: #bcbec0; }
 }
 
 /* party-cm-table */
+#party-cm-table {
+  font-size: 12pt;
+}
+
 table.party {
   float: left;
   width: 100%;

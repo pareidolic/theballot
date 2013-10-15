@@ -11,10 +11,6 @@
   margin-bottom: 80px;
 }
 
-.bold-text {
-  font-weight: 400;
-}
-
 /* Wedge chart showing Lok Sabha member experience */
 #lok-sabha-xp-dist {
   position: relative;
