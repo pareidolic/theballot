@@ -28,8 +28,15 @@ a {
   color: #404040;
 }
 
+a:lang(hi) {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
+}
+
 a:hover {
   text-decoration: none;
+  border-bottom: 0;
 }
 
 h1 {
@@ -94,6 +101,7 @@ strong {
 
 #left-arrow a, #right-arrow a {
   text-decoration: none;
+  border-bottom: 0;
   color: #E2E2E2;
 }
 

@@ -35,6 +35,13 @@ h1 {
   line-height: 1.45;
 }
 
+.shareme {
+  font-family: "Kohinoor Devanagari Book 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
 .stat-text {
   font-size: 16pt !important;
 }
@@ -56,4 +63,8 @@ h1 {
 
 #sources a:not(.normal-anchor) {
   font-style: normal;
+}
+
+#relatedlinks {
+  display: none;
 }

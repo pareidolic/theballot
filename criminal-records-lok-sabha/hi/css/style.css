@@ -16,3 +16,14 @@
 #india-map-text-1 {
   font-size: 21pt !important;
 }
+
+#india-map-legend > div {
+  font-family: "Kohinoor Devanagari Medium 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 12pt;
+  line-height: 1.5em;
+  padding-top: 8px !important;
+  padding-bottom: 4px !important;
+}
