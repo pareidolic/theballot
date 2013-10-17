@@ -5,6 +5,29 @@ body {
   background-color: #062F3F;
 }
 
+body,
+h1 {
+  font-weight: 100;
+}
+
+h1 > strong {
+  font-weight: 900;
+}
+
+#section-title {
+  margin-bottom: 50px;
+  color: #F75819;
+}
+
+#section-desc {
+  color: white;
+}
+
+#section-desc a#latest-chart {
+  color: #F75819;
+  font-weight: 400;
+}
+
 #homelink {
   background-color: #F75819;
   color: #062F3F;
@@ -38,24 +61,4 @@ a {
 #section-title:hover ~ #right-arrow a, 
 #right-arrow a:hover {
   color: #FFF;
-}
-
-#section-title {
-  margin-bottom: 50px;
-  color: #F75819;
-  font-weight: 100;
-}
-
-#section-title > span {
-  font-weight: 900;
-}
-
-#section-desc {
-  color: white;
-  font-weight: 100;
-}
-
-#section-desc a#latest-chart {
-  color: #F75819;
-  font-weight: 400;
 }

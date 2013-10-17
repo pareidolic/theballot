@@ -13,8 +13,14 @@ html {
 body {
   height: 100%;
   width: 100%;
-  font-family: "adelle", serif;
   color: #404040;
+}
+
+body,
+.text-normal {
+  font-family: "adelle", serif;
+  font-size: 15pt;
+  font-weight: 400;
 }
 
 a {
@@ -22,12 +28,49 @@ a {
   color: #404040;
 }
 
-a:hover {
+a:lang(hi) {
   text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
 }
 
-.italics {
+a:hover {
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+h1 {
+  font-family: "adelle", serif;
+  font-size: 40pt;
+  font-weight: 900;
+  line-height: 1;
+}
+
+i {
   font-style: italic;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.nav-1 {
+  font-family: "adelle", serif;
+  font-weight: 700;
+}
+
+.nav-1-hi {
+  font-family: "Kohinoor Devanagari Medium 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 1.6em;
+  vertical-align: middle;
+}
+
+.nav-2 {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 400;
 }
 
 #top-color-bar {
@@ -58,6 +101,7 @@ a:hover {
 
 #left-arrow a, #right-arrow a {
   text-decoration: none;
+  border-bottom: 0;
   color: #E2E2E2;
 }
 
@@ -85,22 +129,20 @@ a:hover {
   margin-right: auto;
 }
 
-#header {
+#nav-bar {
   padding-top: 50px;
   margin-bottom: 85px;
 }
 
 /* Without this, MSIE 7,8 show an underline */
-#header > a {
+#nav-bar > a {
   text-decoration: none;
 }
 
-#homelink,
-#archivelink,
-#bloglink {
+#nav-bar span {
   display: inline-block;
+  height: 22px;
   font-size: 13pt;
-  font-weight: 700;
 }
 
 #homelink {
@@ -112,11 +154,11 @@ a:hover {
   padding-bottom: 5px;
 }
 
+#hindilink,
+#englishlink,
 #bloglink,
 #archivelink {
-  color: #062F3F;
   background-color: white;
-  border: 2px solid #062F3F;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 3px;
@@ -125,12 +167,30 @@ a:hover {
   margin-left: 10px;
 }
 
+#englishlink,
+#hindilink {
+  color: #C0C0C0;
+  border: 2px solid #C0C0C0;
+}
+
+#bloglink,
+#archivelink {
+  color: #062F3F;
+  border: 2px solid #062F3F;
+}
+
 a > span#homelink:hover {
   background-color: #F75819;
 }
 
-a > span#archivelink:hover,
-a > span#bloglink:hover {
+a > span#englishlink:hover,
+a > span#hindilink:hover {
+  background-color: #C0C0C0;
+  color: white;
+}
+
+a > span#bloglink:hover,
+a > span#archivelink:hover {
   background-color: #062F3F;
   color: white;
 }
@@ -141,26 +201,17 @@ a > span#bloglink:hover {
 
 #section-title {
   margin-bottom: 20px;
-  font-size: 40pt;
-  font-weight: 900;
-  line-height: 1;
   color: #062F3F;
 }
 
 #section-desc {
-  font-size: 15pt;
-  line-height: 1.5;
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-.shareme {
-  font-family: "source-sans-pro", sans-serif;
-  font-size: 13pt;
-  font-weight: 400;
-  color: #A0A0A0;
-}
-
+.shareme,
 .shareme a {
+  font-size: 13pt;
   color: #A0A0A0;
 }
 
@@ -229,14 +280,24 @@ html.no-inlinesvg #unsupported-msg {
   font-style: italic;
 }
 
-#related {
+#notes cite,
+#sources cite,
+#notes cite a,
+#sources cite a {
+  font-family: "source-sans-pro", sans-serif;
+  font-style: italic !important;
+  font-weight: 400;
+  line-height: 1;
+}
+
+#relatedlinks {
   margin-bottom: 50px;
   font-size: 15pt;
 }
 
-#related > span {
-  color: #062F3F;
+.related-heading {
   font-weight: 700;
+  color: #062F3F;
 }
 
 .clearing {
@@ -275,7 +336,6 @@ html.no-inlinesvg #unsupported-msg {
 .col-3-of-3 {
   float: left;
   width: 280px;
-  font-size: 11pt;
 }
 
 .col-2-of-3 {
@@ -327,14 +387,11 @@ html.no-inlinesvg #unsupported-msg {
   width: 100%;
   padding-top: 10px;
   margin-bottom: 10px;
-
-  font-family: "source-sans-pro", sans-serif;
-  font-size: 11pt;
-  font-weight: 400;
-  color: #404040;
 }
 
+#footer,
 #footer a {
+  font-size: 11pt;
   color: #404040;
 }
 

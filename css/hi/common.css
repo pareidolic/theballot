@@ -1,0 +1,70 @@
+/* vim: set sts=2 sw=2 et : */
+
+body {
+  font-family: "Kohinoor Devanagari Light 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+strong {
+  font-family: "Kohinoor Devanagari Demi 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+h1 {
+  font-family: "Kohinoor Devanagari Bold 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 44pt;
+}
+
+#section-title {
+  margin-bottom: 12px;
+}
+
+#section-desc {
+  font-family: "Kohinoor Devanagari Book 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 17pt;
+  line-height: 1.45;
+}
+
+.shareme {
+  font-family: "Kohinoor Devanagari Book 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+.stat-text {
+  font-size: 16pt !important;
+}
+
+#sources,
+#notes {
+  font-family: "Kohinoor Devanagari Book 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 12pt;
+  line-height: 1.3;
+}
+
+#notes p,
+#sources p {
+  margin-bottom: 0.7em;
+}
+
+#sources a:not(.normal-anchor) {
+  font-style: normal;
+}
+
+#relatedlinks {
+  display: none;
+}

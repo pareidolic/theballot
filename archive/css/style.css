@@ -35,10 +35,9 @@
 
 .archive-post .title {
   font-size: 27pt;
-  font-weight: 900;
+  /* NOTE: does not match h1 line-height -- on purpose? */
   line-height: 1.1;
   margin-bottom: 15px;
-  color: #062F3F;
 }
 
 .archive-post .title a {
@@ -51,4 +50,5 @@
 }
 
 .archive-post .desc {
+  font-size: 12pt;
 }

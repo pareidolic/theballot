@@ -1,0 +1,29 @@
+@import url("../../css/style.css");
+@import url("/css/hi/common.css");
+@import url("/css/hi/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#party-wise-cases .single-col-right {
+  font-size: 25pt;
+  line-height: 1.3;
+  margin-top: -3px;
+}
+
+#cabinet-cases .double-col-right {
+  font-size: 21pt;
+}
+
+#india-map-text-1 {
+  font-size: 21pt !important;
+}
+
+#india-map-legend > div {
+  font-family: "Kohinoor Devanagari Medium 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 12pt;
+  line-height: 1.5em;
+  padding-top: 8px !important;
+  padding-bottom: 4px !important;
+}
