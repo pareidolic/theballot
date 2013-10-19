@@ -58,13 +58,13 @@ span.legend-men-box {
   background-color: #9BC9CE;
 }
 
-#pie-chart-text > span#legend-text {
+#pie-chart-text > #legend-text {
   font-weight: 300;
   font-size: 20pt;
   line-height: 1.2;
 }
 
-#pie-chart-text > span#legend-text > span#legend-huge-text {
+#pie-chart-text > #legend-text > span#legend-huge-text {
   display: block;
   color: #598E9B;
   font-family: "source-sans-pro", sans-serif;
