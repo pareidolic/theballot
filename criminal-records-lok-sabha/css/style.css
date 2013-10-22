@@ -145,9 +145,8 @@ div#cabinet-cases {
 #india-heat-map .bihar          path { fill: #306272; } /* 42 */
 #india-heat-map .chandigarh     path { fill: #D1D2D4; } /* 0% */
 #india-heat-map .chhattisgarh   path { fill: #598E9B; } /* 16% */
-#india-heat-map .dadra-haveli   path { fill: #14373F; } /* 100% */
-#india-heat-map .daman-and-diu  path,
-#india-heat-map .daman-and-diu  rect { fill: #D1D2D4; } /* 0% */
+#india-heat-map .dadra-haveli   rect { fill: #14373F; } /* 100% */
+#india-heat-map .daman-and-diu  path { fill: #D1D2D4; } /* 0% */
 #india-heat-map .delhi          path { fill: #598E9B; } /* 14% */
 #india-heat-map .goa            path { fill: #D1D2D4; } /* 0% */
 #india-heat-map .gujarat        path { fill: #306272; } /* 38% */
