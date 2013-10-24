@@ -46,6 +46,11 @@ h1 {
   line-height: 1;
 }
 
+abbr[title] {
+  border-bottom: dotted 1px;
+  display: inline-block;
+}
+
 i {
   font-style: italic;
 }
