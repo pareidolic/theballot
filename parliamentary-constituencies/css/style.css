@@ -1,0 +1,89 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 80px;
+}
+
+.state-color {
+  color: #9BC9CE !important;
+  fill: #9BC9CE;
+}
+
+.ut-color    {
+  color: #598E9B !important;
+  fill: #598E9B;
+}
+
+/* Constituency statistics */
+#constituency-stats div,
+.state-populations-stats div.chart-stats {
+  text-align: center;
+}
+
+#constituency-stats .stat-sub {
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  margin-bottom: 16px;
+}
+
+#constituency-stats .stat-sub > span {
+  display: inline-block;
+}
+
+.state-populations-stats .stat-number,
+#constituency-stats .stat-number,
+#constituency-stats .stat-sub-number {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+.state-populations-stats .stat-number,
+#constituency-stats .stat-number {
+  font-size: 112pt;
+}
+
+#constituency-stats .stat-sub-number {
+  font-size: 96pt;
+  margin-bottom: 20px;
+}
+
+.state-populations-stats .stat-text,
+#constituency-stats .stat-text,
+#constituency-stats .stat-sub-text {
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.state-populations-stats .stat-text,
+#constituency-stats .stat-text {
+  font-size: 15pt;
+}
+
+#constituency-stats .stat-sub-text {
+  font-size: 10pt;
+}
+
+/* State constituencies statistics */
+.state-populations-stats .chart-text {
+  font-weight: 300;
+  font-size: 22pt;
+  line-height: 1.2;
+  margin-top: -10px;
+}
+
+/* State constituencies chart */
+#state-constituencies-chart,
+#state-populations-chart {
+  margin-bottom: 30px !important;
+}
