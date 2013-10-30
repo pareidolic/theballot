@@ -262,6 +262,18 @@ html.no-inlinesvg #unsupported-msg {
   font-weight: 400;
 }
 
+#notes span.col-left,
+#notes span.col-right {
+  color: #404040;
+  display: inline-block;
+  vertical-align: top;
+  width: 450px;
+}
+
+#notes span.col-left {
+  margin-right: 25px;
+}
+
 #sources {
   color: #C0C0C0;
   margin-bottom: 50px;

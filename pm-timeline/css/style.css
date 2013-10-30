@@ -132,6 +132,7 @@ span.legend-bjp {
   font-family: "source-sans-pro", sans-serif;
   font-weight: 300;
   font-size: 112pt;
+  /* Different from every other stat-number because of the SVG underneath */
   line-height: 1.4ex;
 }
 
