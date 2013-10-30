@@ -1,0 +1,76 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+  width: 930px;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 110px;
+}
+
+/* President party chart */
+div#president-party-chart {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#president-party-chart > span {
+  display: inline-block;
+  height: 100px;
+}
+
+#president-party-chart .party-inc  { width: 70%; background-color: #306272; }
+#president-party-stats .party-inc  { color: #306272; }
+#president-party-chart .party-none { width: 23%; background-color: #598E9B; }
+#president-party-stats .party-none { color: #598E9B; }
+#president-party-chart .party-jp   { width: 7%;  background-color: #9BC9CE; }
+#president-party-stats .party-jp   { color: #9BC9CE; }
+
+/* Statistics about Presidents */
+span.percent {
+  opacity: 0.3;
+}
+
+#president-party-stats div,
+#president-term-stats div {
+  text-align: center;
+}
+
+#president-party-stats .stat-number,
+#president-term-stats .stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 30px;
+}
+
+#president-term-stats .stat-number { color: #598E9B; }
+
+#president-party-stats .stat-text,
+#president-term-stats .stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* Horizontal bar comparing women President term length */
+#president-term-women-compare > div > span {
+  display: inline-block;
+  height: 40px;
+}
+
+#president-term-women-compare .female { width: 8%;  background-color: #598E9B; }
+#president-term-women-compare .male   { width: 92%; background-color: #E4E4E4; }
+
+#president-term-women-compare #women-compare-text {
+  margin-top: 30px;
+  font-weight: 300;
+  font-size: 21pt;
+  line-height: 1.2;
+  padding-left: 8%;
+}
