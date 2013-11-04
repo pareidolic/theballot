@@ -301,12 +301,12 @@ html.no-inlinesvg #unsupported-msg {
   font-style: italic;
 }
 
-#notes cite,
-#sources cite,
-#notes cite a,
-#sources cite a {
+#notes cite:lang(en),
+#sources cite:lang(en),
+#notes cite a:lang(en),
+#sources cite a:lang(en) {
   font-family: "source-sans-pro", sans-serif;
-  font-style: italic !important;
+  font-style: italic;
   font-weight: 400;
   line-height: 1;
 }

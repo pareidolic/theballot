@@ -1,0 +1,21 @@
+@import url("../../css/style.css");
+@import url("/css/hi/common.css");
+@import url("/css/hi/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+span.legend-box {
+  font-family: "Kohinoor Devanagari Bold 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+
+  padding-top: 14px;
+  padding-bottom: 10px;
+}
+
+.pie-chart-heading {
+  font-family: "Kohinoor Devanagari Demi 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}

@@ -35,7 +35,10 @@ span.legend-box {
   color: white;
 
   line-height: 1ex;
-  padding: 12px;
+  padding-top: 13px;
+  padding-bottom: 11px;
+  padding-right: 12px;
+  padding-left: 12px;
   margin-bottom: 15px;
   margin-right: 12px;
 }

@@ -14,6 +14,13 @@ strong {
   font-stretch: normal;
 }
 
+b {
+  font-family: "Kohinoor Devanagari Bold 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
 h1 {
   font-family: "Kohinoor Devanagari Bold 2";
   font-style: normal;
@@ -42,12 +49,24 @@ h1 {
   font-stretch: normal;
 }
 
-.stat-text {
-  font-size: 16pt !important;
+.stat-number sup:lang(hi) {
+  font-family: "Kohinoor Devanagari Book 2";
+  font-style: normal;
+  font-weight: normal !important;
+  font-stretch: normal;
+  font-size: 22% !important;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
-#sources,
-#notes {
+.stat-text:lang(hi) {
+  font-size: 16pt;
+}
+
+cite:lang(hi),
+cite a:lang(hi),
+#sources:lang(hi),
+#notes:lang(hi) {
   font-family: "Kohinoor Devanagari Book 2";
   font-style: normal;
   font-weight: normal;

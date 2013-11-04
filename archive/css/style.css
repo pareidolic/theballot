@@ -12,13 +12,10 @@
   margin-bottom: 50px;
 }
 
-.archive-post .single-col-left {
+.archive-post .single-col-left,
+.archive-post .single-col-left a {
   font-family: "source-sans-pro", sans-serif;
   line-height: 1.3;
-}
-
-.archive-post .week,
-.archive-post .date {
   color: #A0A0A0;
 }
 
@@ -31,6 +28,18 @@
 .archive-post .date {
   font-weight: 700;
   font-size: 13pt;
+}
+
+.archive-post .translated-link {
+  margin-top: 60px;
+}
+
+.archive-post .translated-link:lang(hi),
+.archive-post .translated-link a:lang(hi) {
+  font-family: "Kohinoor Devanagari Book 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
 }
 
 .archive-post .title {
@@ -51,4 +60,10 @@
 
 .archive-post .desc {
   font-size: 12pt;
+}
+
+.archive-post .desc > span > a.before-hi {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
 }
