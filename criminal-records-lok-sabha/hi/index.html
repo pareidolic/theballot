@@ -20,7 +20,42 @@
         "pareidolic.in'>Contact</a>";
     }
 
-    window.onload = add_email;
+    function broken_osx_browser_and_version() {
+      var userAgent = navigator.userAgent.toLowerCase();
+      if (!/mac os x/.test(userAgent)) {
+        return false;
+      }
+      var versionArray = userAgent.replace(/.*mac os x ([0-9_]+).*/, "$1").split("_");
+      if (/applewebkit/.test(userAgent) &&
+          ((versionArray[0] < 10) ||
+           (versionArray[1] < 7) ||
+           (versionArray[1] == 7 && versionArray[2] < 4) ||
+           (versionArray[1] == 8 && versionArray[2] < 5))) {
+        return true;
+      }
+      return false;
+    }
+
+    function show_errors() {
+      // Indic rendering is broken on all iOS devices, as far as we know
+      if (/ip(hone|ad|od)/.test(navigator.userAgent.toLowerCase())) {
+        //document.getElementById("ios-hindi").style.display = "block";
+        return;
+      }
+
+      // OS X version < 10.7.4 and < 10.8.5 have broken Indic rendering
+      if (broken_osx_browser_and_version()) {
+        document.getElementById("osx-hindi").style.display = "block";
+        return;
+      }
+    }
+
+    function do_onload() {
+      add_email();
+      show_errors();
+    }
+
+    window.onload = do_onload;
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-43617415-1']);
@@ -35,6 +70,11 @@
   </script>
 </head>
 <body lang="hi">
+  <div id="error-msges">
+    <div lang="en" id="osx-hindi">
+      To view Hindi text on this page properly, please upgrade OS&nbsp;X to the latest version or use <a href="http://mozilla.com/firefox">Firefox</a>.
+    </div>
+  </div>
   <div id="top-color-bar"></div>
   <div id="wrapper">
     <div id="nav-bar" lang="en">

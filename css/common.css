@@ -82,6 +82,21 @@ strong {
   font-weight: 400;
 }
 
+#error-msges > div {
+  font-family: 'adelle';
+  font-size: 10pt;
+  background-color: #F4F4F4;
+  display: none;
+
+  border: 1px dotted; padding: 5px;
+  position: fixed;
+  width: 120px;
+  right: 0px;
+  top: 55px;
+  z-index: 100;
+  opacity: 0.75;
+}
+
 #top-color-bar {
   height: 5px;
   background-color: #062F3F;
