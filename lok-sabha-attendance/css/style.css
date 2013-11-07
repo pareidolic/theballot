@@ -1,0 +1,74 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#head-chart {
+  float: left;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 55px;
+}
+
+div.stat-num-text {
+  text-align: center;
+}
+
+div.stat-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #598E9B;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 35px;
+}
+
+div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+div.stat-number span.percent {
+  color: #9BC9CE;
+}
+
+div.chart-side-text {
+  margin-top: -3px;
+}
+
+div.stat-num-side-text,
+div.chart-side-text {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2;
+}
+
+div.stat-num-side-text p,
+div.chart-side-text p {
+  margin-bottom: 0.5em;
+}
+
+/* Bar charts */
+#demographics-attendance div.intro-text,
+#demographics-attendance div.joiner-text {
+  font-size: 24pt;
+  margin-bottom: 20px;
+}
+
+#demographics-attendance div.joiner-text {
+  margin-top: 20px;
+}
+
+#demographics-attendance span {
+  font-size: 14pt;
+}
+
+#demographics-attendance .compare-text {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2ex;
+  padding-top: 10px;
+  padding-bottom: 18px;
+}
