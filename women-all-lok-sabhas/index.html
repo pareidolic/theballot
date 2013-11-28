@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html class="no-js">
+<!-- vim: set sts=2 sw=2 et tw=0 : -->
+<head>
+  <meta charset="UTF-8">
+  <title>The Ballot — Women in all the Lok Sabhas</title>
+  <link rel="shortcut icon" href="/favicon.ico?1" />
+  <link rel="image_src" href="/banners/the-b.png" />
+  <meta property="og:image" content="http://theballot.in/banners/the-b.png" />
+  <meta property="og:description" content="Starting from the very first Lok Sabha, the proportion of women in the house has been rather low, and in the late 70s, it plummeted to its lowest at 3.9%. It was only in the 13th Lok Sabha, between 1999–2004, that for the first time a woman was chosen to be a Sitting Member. The current Lok Sabha not only has the most number of women ever, but also has two women Sitting Members." />
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="//use.typekit.net/ahb7pnz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="/js/modernizer.js"></script>
+  <script type="text/javascript" src="/js/snap.svg-min.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      add_email();
+      animate_svg();
+    }
+
+    function add_email() {
+      document.getElementById("email").innerHTML = "<a href='mailto:theballot" +
+        String.fromCharCode(64) +
+        "pareidolic.in'>Contact</a>";
+    }
+
+    function animate_svg() {
+      var womenTotalList = [
+        [24, 489], [24, 494], [37, 494], [33, 520], [28, 518],
+        [21, 542], [32, 542], [45, 541], [28, 529], [42, 534],
+        [41, 543], [44, 543], [52, 543], [52, 543], [63, 543]
+      ];
+      var lokSabhaYearsList = [
+        [1952, 1957], [1957, 1962], [1962, 1967], [1967, 1970], [1971, 1977],
+        [1977, 1979], [1980, 1984], [1984, 1989], [1989, 1991], [1991, 1996],
+        [1996, 1997], [1998, 1999], [1999, 2004], [2004, 2009], [2009, 2014]
+      ];
+
+      var cursor = Snap.select("#bar-chart-cursor");
+      var chart = Snap.select("#women-lok-sabha-chart");
+      var bars = Snap.selectAll("#women-lok-sabha-bar-chart .chart-bars > rect");
+      var eachLS = Snap.select("#women-lok-sabha-each svg");
+      var chartDesc = Snap.select("#women-lok-sabha-each .chart-description");
+
+      var labels = Snap.select("#women-lok-sabha-slider .chart-labels");
+      var labelsText = labels.selectAll("g");
+
+      /* Hookup events */
+      chart.hover(
+        function() {
+          var classes = (chart.select(".glowing").attr("class") || "").replace("glowing", "");
+          /* Stop glowing on hover */
+          chart.select(".glowing").attr({"class": "hover "+classes})
+        },
+        function() {
+          var classes = (chart.select(".selected").attr("class") || "") + " glowing";
+          /* Stop glowing on hover */
+          chart.select(".selected").attr({"class": "hover "+classes})
+        });
+      for (i = 0; i < bars.length; i++) {
+        bars[i].click(bar_selected, {index: i});
+        labelsText[i].click(bar_selected, {index: i});
+        /* Highlight on hover */
+        bars[i].hover(
+          function() {
+            var classes = labelsText[this.index].attr("class") || "";
+            labelsText[this.index].attr({"class": "hover "+classes})
+          },
+          function() {
+            var classes = (labelsText[this.index].attr("class") || "").replace("hover", "");
+            labelsText[this.index].attr({"class": classes})
+          },
+          {index: i});
+        /* Highlight on hover */
+        labelsText[i].hover(
+          function() {
+            var classes = bars[this.index].attr("class") || "";
+            bars[this.index].attr({"class": "hover "+classes})
+          },
+          function() {
+            var classes = (bars[this.index].attr("class") || "").replace("hover", "");
+            bars[this.index].attr({"class": classes})
+          },
+          {index: i});
+      }
+
+      /*var lx = 0, ly = 0, ox = 0, oy = 0;
+      var moveFnc = function(dx, dy, x, y) {
+        var thisBox = this.getBBox();
+        lx = dx + ox;
+        ly = oy;
+        this.transform('t' + lx + ',' + ly);
+      }
+      var startFnc = function(x, y, e) {  }
+      var endFnc = function() {
+        ox = lx;
+        oy = ly;
+      };
+      cursor.drag(moveFnc,
+                  startFnc,
+                  endFnc);*/
+
+      function bar_selected() {
+        var w = womenTotalList, j = this.index;
+        /* Update the bar chart itself */
+        unselect_all_bars(j);
+        bars[j].attr({"class": "selected"});
+        labelsText[j].attr({"class": "selected"});
+        setTimeout(function() { update_chart_desc(); }, 10);
+
+        /* When a bar is selected, we must unselect all other bars */
+        function unselect_all_bars(j) {
+          for (i = 0; i < bars.length; i++)
+            if (i != j) {
+              bars[i].attr({"class": ""});
+              labelsText[i].attr({"class": ""});
+            }
+        }
+
+        /* Update the chart description */
+        function update_chart_desc() {
+          document.getElementsByClassName("women-count")[0].innerHTML = w[j][0];
+          document.getElementsByClassName("total-count")[0].innerHTML = w[j][1];
+          document.getElementsByClassName("women-percent")[0].innerHTML = (w[j][0]/ w[j][1] * 100).toFixed(1);
+          document.getElementsByClassName("lok-sabha-year-from")[0].innerHTML = lokSabhaYearsList[j][0];
+          document.getElementsByClassName("lok-sabha-year-to")[0].innerHTML = lokSabhaYearsList[j][1];
+          document.getElementsByClassName("lok-sabha-nth")[0].innerHTML = labels.select("g:nth-child("+(j+1)+") html\\:u").innerSVG();
+          /* Current and past */
+          if (j+1 == 15) {
+            document.getElementsByClassName("lok-sabha-tense")[0].innerHTML = "are";
+            document.getElementById("pm-tense").innerHTML = "is";
+          } else {
+            document.getElementsByClassName("lok-sabha-tense")[0].innerHTML = "were";
+            document.getElementById("pm-tense").innerHTML = "was";
+          }
+          /* Highest and lowest */
+          if (j+1 == 15)
+            document.getElementById("lok-sabha-high-low").innerHTML = " — the <strong>highest</strong>";
+          else if (j+1 == 6)
+            document.getElementById("lok-sabha-high-low").innerHTML = " — the <strong>lowest</strong>";
+          else
+            document.getElementById("lok-sabha-high-low").innerHTML = "<br>&nbsp;";
+          /* Speaker */
+          if ((j+1) == 13) {
+            document.getElementById("sitting-members-count").innerHTML = "1";
+            document.getElementById("sitting-members-count-text").innerHTML = "one";
+            document.getElementById("sitting-members-tense").innerHTML = "was";
+            document.getElementById("sitting-members-quantity-suffix").innerHTML = "";
+            document.getElementById("ls-others").className = "";
+            document.getElementById("ls-13").className = "selected";
+            document.getElementById("ls-15").className = "";
+          } else if ((j+1) == 15) {
+            document.getElementById("sitting-members-count").innerHTML = "2";
+            document.getElementById("sitting-members-count-text").innerHTML = "two";
+            document.getElementById("sitting-members-tense").innerHTML = "are";
+            document.getElementById("sitting-members-quantity-suffix").innerHTML = "s";
+            document.getElementById("ls-others").className = "";
+            document.getElementById("ls-13").className = "";
+            document.getElementById("ls-15").className = "selected";
+          } else {
+            document.getElementById("sitting-members-count").innerHTML = "0";
+            document.getElementById("sitting-members-count-text").innerHTML = "no";
+            document.getElementById("sitting-members-tense").innerHTML = "were";
+            document.getElementById("sitting-members-quantity-suffix").innerHTML = "s";
+            document.getElementById("ls-others").className = "selected";
+            document.getElementById("ls-13").className = "";
+            document.getElementById("ls-15").className = "";
+          }
+          /* Prime Ministers */
+          if ([4, 5, 7].indexOf(j+1) >= 0) {
+            document.getElementById("pm-gender").innerHTML = "woman";
+            eachLS.select("path#male-symbol").attr({class: ""});
+            eachLS.select("path#female-symbol").attr({class: "selected"});
+            document.getElementById("female-pm-name").className = "selected";
+            document.getElementById("male-pm-name").className = "";
+          } else {
+            eachLS.select("path#male-symbol").attr({class: "selected"});
+            eachLS.select("path#female-symbol").attr({class: ""});
+            document.getElementById("pm-gender").innerHTML = "man";
+            document.getElementById("female-pm-name").className = "";
+            document.getElementById("male-pm-name").className = "selected";
+          }
+        }
+      }
+    }
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-43617415-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <div id="top-color-bar"></div>
+  <div id="wrapper">
+    <div id="nav-bar">
+      <a href="/"><span class="nav-1" id="homelink">The Ballot</span></a>
+      <a href="http://blog.theballot.in"><span class="nav-1" id="bloglink">Blog</span></a>
+      <a href="/archive/"><span class="nav-1" id="archivelink">Archive</span></a>
+    </div>
+    <div id="content">
+      <div id="text">
+        <h1 id="section-title">Women in all the Lok Sabhas</h1>
+        <div id="left-arrow"><a href="/" title="Previous post">&lsaquo;</a></div>
+        <div id="right-arrow"><a href="/lok-sabha-attendance/" title="Next post">&rsaquo;</a></div>
+        <div id="section-desc">
+          Starting from the very first Lok Sabha, the proportion of women in the house has been rather low, and in the late 70s, it plummeted to its lowest at 3.9%. It was only in the 13th Lok Sabha, between 1999–2004, that for the first time a woman was chosen to be a Sitting Member. The current Lok Sabha not only has the most number of women ever, but also has two women Sitting Members.
+        </div>
+        <div class="nav-2 shareme">
+          Share on
+          <a href="" onclick="window.open('http://twitter.com/?status=This%20week%20on%20@WeAreTheBallot:%20' + encodeURIComponent(document.getElementById('section-title').textContent) + '%20→%20' + encodeURIComponent(location.href)); return false;">Twitter</a>
+          ,
+          <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href)); return false;">Facebook</a>
+           or
+         <a href="" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href)); return false;">Google+</a>.
+          <span style="float: right">&lt; <a href="/">Previous post</a> | <a href="/lok-sabha-attendance/">Next post</a> &gt;</span>
+        </div>
+      </div>
+      <div class="visual">
+        <div class="text-normal" id="unsupported-msg">
+          <div id="sadface">☹</div>
+          <p>Your browser doesn't support <a href="http://en.wikipedia.org/wiki/SVG">Inline SVG</a>, but we use it for all our graphs and charts. Please upgrade your browser, or use the latest versions of <a href="http://www.mozilla.org/firefox">Firefox</a> or <a href="www.google.com/chrome">Chrome</a>!</p><br/>
+        </div>
+        <div id="head-chart">
+          <div id="women-lok-sabha-chart">
+            <svg id="women-lok-sabha-bar-chart" width="930px" height="290px" viewBox="0 0 930 290" xml:space="preserve">
+            <!-- Flip y-axis upside down, so that the bars start at the bottom -->
+            <g transform="translate(0, 290) scale(1, -1)">
+              <g>
+                <rect y="240" fill="#F7F8F8" width="930" height="20"/>
+                <rect y="200" fill="#F7F8F8" width="930" height="20"/>
+                <rect y="160" fill="#F7F8F8" width="930" height="20"/>
+                <rect y="120" fill="#F7F8F8" width="930" height="20"/>
+                <rect y="80" fill="#F7F8F8" width="930" height="20"/>
+                <rect y="40" fill="#F7F8F8" width="930" height="20"/>
+                <rect y="0" fill="#F7F8F8" width="930" height="20"/>
+              </g>
+              <g class="chart-bars">
+                <rect x="15.2" y="0" width="30" height="93"/>
+                <rect x="78.2" y="0" width="30" height="92"/>
+                <rect x="140.2" y="0" width="30" height="142"/>
+                <rect x="204.2" y="0" width="30" height="120"/><path d="M219,128 l-5,5 l10,0 z" fill="orange" stroke="none"/>
+                <rect x="267.2" y="0" width="30" height="102"/><path d="M282,110 l-5,5 l10,0 z" fill="orange" stroke="none"/>
+                <rect x="327.2" y="0" width="30" height="73"/>
+                <rect x="387.2" y="0" width="30" height="111"/><path d="M402,119 l-5,5 l10,0 z" fill="orange" stroke="none"/>
+                <rect class="selected glowing" x="450.2" y="0" width="30" height="157"/>
+                <rect x="512.2" y="0" width="30" height="100"/>
+                <rect x="574.2" y="0" width="30" height="149"/>
+                <rect x="635.2" y="0" width="30" height="143"/>
+                <rect x="698.2" y="0" width="30" height="153"/>
+                <rect x="760.2" y="0" width="30" height="181"/><path d="M775,189 l-5,5 l10,0 z" fill="orange" stroke="none"/>
+                <rect x="823.2" y="0" width="30" height="181"/>
+                <rect x="883.2" y="0" width="30" height="220"/><path d="M898,228 l-5,5 l10,0 z" fill="orange" stroke="none"/>
+              </g>
+            </g>
+            <g class="chart-legend">
+              <rect class="women" x="7" y="5" width="20" height="10" />
+              <text x="32" y="15" font-family="'Adelle-Regular'" font-size="14">Women MPs in each Lok Sabha (%age)</text>
+              <text x="923" y="15" text-anchor="end" font-family="'Adelle-Regular'" font-size="14">Click on a bar to see details about that Lok Sabha</text>
+            </g>
+            </svg>
+            
+            <svg id="women-lok-sabha-slider" width="930px" height="44px" viewBox="-1 -1 930 44" xml:space="preserve" xmlns:html="http://www.w3.org/1999/xhtml">
+            <g class="chart-labels">
+              <g><foreignObject transform="matrix(1 0 0 1 8 18)" width="40" height="50"><html:u>1st</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 72 18)" width="40" height="50"><html:u>2nd</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 134 18)" width="40" height="50"><html:u>3rd</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 197 18)" width="40" height="50"><html:u>4th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 262 18)" width="40" height="50"><html:u>5th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 320 18)" width="40" height="50"><html:u>6th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 382 18)" width="40" height="50"><html:u>7th</html:u></foreignObject></g>
+              <g class="selected"><foreignObject transform="matrix(1 0 0 1 442 18)" width="40" height="50"><html:u>8th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 505 18)" width="40" height="50"><html:u>9th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 568 18)" width="40" height="50"><html:u>10th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 628 18)" width="40" height="50"><html:u>11th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 692 18)" width="40" height="50"><html:u>12th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 754 18)" width="40" height="50"><html:u>13th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 817 18)" width="40" height="50"><html:u>14th</html:u></foreignObject></g>
+              <g><foreignObject transform="matrix(1 0 0 1 877 18)" width="40" height="50"><html:u>15th</html:u></foreignObject></g>
+            </g>
+            <g class="line-markings">
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="0" y1="-1" x2="0" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="62" y1="-1" x2="62" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="124" y1="-1" x2="124" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="186" y1="-1" x2="186" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="248" y1="-1" x2="248" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="310" y1="-1" x2="310" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="372" y1="-1" x2="372" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="434" y1="-1" x2="434" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="496" y1="-1" x2="496" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="558" y1="-1" x2="558" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="620" y1="-1" x2="620" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="682" y1="-1" x2="682" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="744" y1="-1" x2="744" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="806" y1="-1" x2="806" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="868" y1="-1" x2="868" y2="19"/>
+              <line fill="none" stroke="#231F20" stroke-miterlimit="10" x1="929" y1="-1" x2="929" y2="19"/>
+            </g>
+            <g class="connecting-lines">
+              <line id="ls1" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="0" y1="9" x2="62" y2="9"/>
+              <line id="ls2" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="63" y1="9" x2="124" y2="9"/>
+              <line id="ls3" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="125" y1="9" x2="186" y2="9"/>
+              <line id="ls4" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="187" y1="9" x2="248" y2="9"/>
+              <line id="ls5" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="249" y1="9" x2="310" y2="9"/>
+              <line id="ls6" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="311" y1="9" x2="372" y2="9"/>
+              <line id="ls7" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="373" y1="9" x2="434" y2="9"/>
+              <line id="ls8" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="435" y1="9" x2="496" y2="9"/>
+              <line id="ls9" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="497" y1="9" x2="558" y2="9"/>
+              <line id="ls10" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="559" y1="9" x2="620" y2="9"/>
+              <line id="ls11" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="621" y1="9" x2="682" y2="9"/>
+              <line id="ls12" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="683" y1="9" x2="744" y2="9"/>
+              <line id="ls13" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="745" y1="9" x2="806" y2="9"/>
+              <line id="ls14" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="807" y1="9" x2="868" y2="9"/>
+              <line id="ls15" fill="none" stroke="#231F20" stroke-miterlimit="10" x1="869" y1="9" x2="930" y2="9"/>
+            </g>
+            <rect id="bar-chart-cursor" x="434" y="6.5" fill="#F75819" width="62" height="5"/>
+            </svg>
+          </div> <!-- #women-lok-sabha-chart -->
+          <div id="women-lok-sabha-each">
+            <div id="lok-sabha-name-details">
+              <span class="lok-sabha-name">In the <span class="lok-sabha-nth">8th</span> Lok Sabha</span> (<span class="lok-sabha-year-from">1984</span>–<span class="lok-sabha-year-to">1989</span>),
+            </div>
+            <div class="col-1-of-3 chart-description">
+              <span class="legend-huge-text"><span class="women-percent">8.3</span><span class="percent">%</span></span>
+              or, <strong class="women-count">45</strong> out of <strong class="total-count">541</strong> MPs <span class="lok-sabha-tense">were</span> women<span id="lok-sabha-high-low"><br>&nbsp;</span>
+            </div>
+            <div class="col-2-of-3 chart-description">
+              <div id="sitting-members-count" class="legend-huge-text">0</div>
+              <div id="sitting-members-desc">
+                There&nbsp;<span id="sitting-members-tense">were</span>&nbsp;<strong id="sitting-members-count-text">no</strong>&nbsp;female
+                sitting&nbsp;member<span id="sitting-members-quantity-suffix">s</span>
+                <div class="stat-small-text">
+                  <span id="ls-others" class="selected">
+                    <!-- Four lines of empty space -->
+                    <br><br><br><br>
+                  </span>
+                  <span id="ls-13">
+                    (<strong>Opposition&nbsp;Leader</strong>:
+                    Sonia&nbsp;Gandhi,&nbsp;INC)
+                    <!-- 2 lines of text + 3 lines of empty space -->
+                    <br><br><br>
+                  </span>
+                  <span id="ls-15">
+                    (<strong>Speaker&nbsp;of&nbsp;the&nbsp;House</strong>:
+                    Meira&nbsp;Kumar,&nbsp;INC
+                    <strong>Opposition&nbsp;Leader</strong>:
+                    Sushma&nbsp;Swaraj,&nbsp;BJP)
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-3-of-3 chart-description">
+              <div id="pm-gender-symbols">
+                <div class="legend-huge-text">&nbsp;</div>
+                <!-- This SVG is derived from the Wikipedia Venus/Mars symbols -->
+                <svg width="280px" height="120px" viewBox="0 0 280 120" xml:space="preserve">
+                <path id="male-symbol" class="selected" transform="scale(2, 2) translate(45, -10)" fill="none" stroke="none" stroke-width="2.1" d="m30,21a12.2,12.2 0 1,0 2,2zl1,1 11-11m-9,0h9v9"/>
+                <path id="female-symbol" transform="scale(1.3, 1.3) translate(65, -8)"  fill="none" stroke="none" stroke-width="3.2" d="m47,59H28m9.5,10V46.2a18.3,18.3 0 1,1 .1,0"/>
+                </svg>
+              </div>
+              <div id="pm-desc">
+                The&nbsp;Prime&nbsp;Minister
+                <span id="pm-tense">was</span>&nbsp;a&nbsp;<strong id="pm-gender">man</strong>
+                <div class="stat-small-text">
+                  <span id="male-pm-name" class="selected"><br></span>
+                  <span id="female-pm-name">(Indira&nbsp;Gandhi,&nbsp;INC)</span>
+                </div>
+              </div>
+            </div>
+          </div> <!-- #women-lok-sabha-each -->
+          <div id="women-lok-sabha-term-dist">
+            <div id="women-lok-sabha-wedge-chart-text">
+              <p>Only <strong>311 women</strong> have been elected to the Lok Sabha in the history of India. In total, <strong>4529 MPs</strong> have been elected in that time.</p>
+              <p><strong>58.5%</strong>, or <strong>182</strong> were <strong>elected only once</strong>.</p>
+              <p>About <strong>19%</strong>, or <strong>59</strong> were <strong>elected twice</strong>.</p>
+            </div> <!-- #women-lok-sabha-wedge-chart-text -->
+            <div id="women-lok-sabha-wedge-chart">
+              <svg width="930px" height="540px" viewBox="0 0 930 540" xml:space="preserve">
+              <g>
+                <path fill="#14373f" d="M235.13,199.933l693.729,14.019c0.092-4.671,0.141-9.343,0.141-14.019H235.13z"/>
+                <path fill="#477682" d="M235.13,199.935l622.161,37.755c0.51-8.378,0.848-16.768,1.018-25.163L235.13,199.935z"/>
+                <path fill="#598e9b" d="M235.13,199.936l548.688,66.839c1.35-11.083,2.365-22.209,3.039-33.358L235.13,199.936z"/>
+                <path fill="#7eacb1" d="M235.13,199.938l463.022,134.571c7.254-24.959,12.477-50.464,15.621-76.265L235.13,199.938z"/>
+                <path fill="#92c5cb" d="M235.13,199.939l328.551,247.957c30.139-39.936,52.746-85.033,66.711-133.079L235.13,199.939z"/>
+                <path fill="#9fd6dd" d="M235.13,199.941l53.183,336.882c87.285-13.778,165.812-60.898,219.044-131.431L235.13,199.941z"/>
+                <path fill="#b5ebf1" d="M235.13,199.943L2.488,337.94c56.513,95.271,165.403,146.458,274.822,129.185L235.13,199.943z"/>
+                <path fill="#d7f4f8" d="M235.13,199.944h199.927c0-110.417-89.51-199.928-199.928-199.928C124.711,0.016,35.2,89.528,35.2,199.944
+                  c0,35.895,9.665,71.126,27.977,101.997L235.13,199.944z"/>
+              </g>
+              <circle fill="#FFFFFF" cx="235.13" cy="200" r="123.488"/>
+              <circle fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" cx="235.13" cy="199.933" r="199.933"/>
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M-1,331.982
+                c46.297,82.612,134.694,138.448,236.13,138.448c149.392,0,270.497-121.107,270.497-270.498c0-3.943-0.084-7.865-0.252-11.767"/>
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M277.273,538.416
+                c168.478-20.762,298.918-164.39,298.918-338.483c0-4.531-0.088-9.042-0.262-13.53"/>
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M557.016,456.524
+                c56.164-70.366,89.74-159.558,89.74-256.592c0-3.858-0.053-7.704-0.158-11.537"/>
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M695.463,343.901
+                c14.203-45.465,21.857-93.822,21.857-143.969c0-3.342-0.035-6.675-0.102-10.001"/>
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M782.105,280.166
+                c3.809-26.193,5.779-52.982,5.779-80.233c0-3.943-0.041-7.875-0.121-11.797"/>
+              <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M856.309,251.977
+                c1.418-17.16,2.141-34.518,2.141-52.044c0-3.909-0.035-7.811-0.107-11.703"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="235.13" y1="199.933" x2="2.488" y2="338.005"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="252.313" y1="308.786" x2="287.995" y2="536.917"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="323.69" y1="266.775" x2="563.711" y2="447.896"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="304.514" y1="220.103" x2="695.463" y2="333.728"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="342.097" y1="212.054" x2="782.105" y2="267.223"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="342.097" y1="203.983" x2="856.309" y2="237.63"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="928.859" y1="213.952" x2="314.921" y2="199.933"/>
+              <text transform="matrix(1 0 0 1 464.7114 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">2</text>
+              <text transform="matrix(1 0 0 1 534.7109 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">3</text>
+              <text transform="matrix(1 0 0 1 603.7109 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">4</text>
+              <text transform="matrix(1 0 0 1 673.7109 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">5</text>
+              <text transform="matrix(1 0 0 1 745.7109 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">6</text>
+              <text transform="matrix(1 0 0 1 816.7109 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">7</text>
+              <text transform="matrix(1 0 0 1 887.7109 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">8</text>
+              <text transform="matrix(1 0 0 1 392.7114 186.4023)" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="24">1</text>
+              <text transform="matrix(1 0 0 1 204.0557 49.2295)" fill="#30555e" font-family="'SourceSansPro-Black'" font-size="24">58.5%</text>
+              <text transform="matrix(1 0 0 1 120 420)" fill="#30555e" font-family="'SourceSansPro-Black'" font-size="24">19%</text>
+              <text x="235.13" y="200" text-anchor="middle" fill="#30555e" font-family="'SourceSansPro-Light'" font-size="48"><tspan dy="0.6ex">311</tspan></text>
+              </svg>
+            </div> <!-- #women-lok-sabha-wedge-chart -->
+          </div> <!-- women-lok-sabha-term-dist -->
+          <div id="max-elected-women-serving" class="elected-stats-text">
+            <p><strong>Sumitra Mahajan</strong> of BJP from Madhya Pradesh (70 yo)</p>
+            <p>has been elected to the Lok Sabha <strong>seven times</strong>; the maximum for a <strong>serving woman</strong>.</p>
+            <div class="lok-sabha-term-boxes">
+              <span>1</span><!--
+           --><span>2</span><!--
+           --><span>3</span><!--
+           --><span>4</span><!--
+           --><span>5</span><!--
+           --><span>6</span><!--
+           --><span>7</span><!--
+           --><span>8</span><!--
+           --><span class="elected">9</span><!--
+           --><span class="elected">10</span><!--
+           --><span class="elected">11</span><!--
+           --><span class="elected">12</span><!--
+           --><span class="elected">13</span><!--
+           --><span class="elected">14</span><!--
+           --><span class="elected">15</span>
+            </div>
+          </div> <!-- max-elected-women-serving -->
+          <div id="max-elected-women-ever" class="elected-stats-text">
+            <p><strong>Vijaya Raje Scindia</strong> of BJP from Madhya Pradesh (deceased)</p>
+            <p>had been elected to the Lok Sabha <strong>eight times</strong>; the maximum for <strong>any woman</strong>.</p>
+            <div class="lok-sabha-term-boxes">
+              <span>1</span><!--
+           --><span class="elected">2</span><!--
+           --><span class="elected">3</span><!--
+           --><span class="elected">4</span><!--
+           --><span class="elected">5</span><!--
+           --><span>6</span><!--
+           --><span>7</span><!--
+           --><span>8</span><!--
+           --><span class="elected">9</span><!--
+           --><span class="elected">10</span><!--
+           --><span class="elected">11</span><!--
+           --><span class="elected">12</span><!--
+           --><span>13</span><!--
+           --><span>14</span><!--
+           --><span>15</span>
+            </div>
+          </div> <!-- max-elected-women-ever -->
+          <div id="women-across-lok-sabhas">
+            <div class="col-1-of-2">
+              <svg width="450px" height="450px" viewBox="-1 -1 450 450" xml:space="preserve">
+              <path class="women" d="M224.5,224.5L130.406,20.12C159.915,6.535,192.015-0.5,224.5-0.5V224.5z"/>
+              <path class="men" d="M224.5,224.5v-225c124.264,0,225,100.736,225,225c0,124.264-100.736,225-225,225
+                c-124.264,0-225-100.736-225-225c0-87.839,51.117-167.646,130.906-204.38L224.5,224.5z"/>
+              <circle fill="#FFFFFF" cx="225.213" cy="224.417" r="187.5"/>
+              <path class="women-15th" d="M224.5,224.5L211.821,75.037c4.217-0.357,8.447-0.537,12.679-0.537V224.5z"/>
+              <path class="women" d="M224.5,224.5L161.771,88.247c15.792-7.271,32.727-11.741,50.05-13.21L224.5,224.5z"/>
+              <path class="men" d="M224.5,224.5v-150c82.843,0,150,67.157,150,150s-67.157,150-150,150s-150-67.157-150-150
+                c0-58.559,34.078-111.764,87.271-136.253L224.5,224.5z"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="224.5" y1="-0.5" x2="224.5" y2="46.181"/>
+              <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="130.406" y1="20.12" x2="155.442" y2="74.5"/>
+              </svg>
+            </div>
+            <div class="col-2-of-2">
+              <div id="women-across-chart-legend">
+                <span class="legend-box men">MEN IN ALL LOK SABHAS</span>
+                <span class="legend-box women">WOMEN IN ALL LOK SABHAS</span>
+                <span class="legend-box women-15th">WOMEN IN THE 15TH LOK SABHA</span>
+              </div>
+              <div id="women-across-chart-desc">
+                <p>
+                Since Independence, <strong>4529 people</strong> have served as MPs in the Lok Sabha. Out of these, <strong>311 MPs</strong>, a little more than <strong>6.8%</strong>, have been <strong>women</strong>.
+                </p>
+                <p>
+                The current Lok Sabha has <strong>410 men</strong>.
+                </p>
+                <p>
+                The same Lok Sabha, which is also the <strong>15th</strong>, has <strong>63 women MPs</strong>. That means <strong>⅕th of the women MPs</strong> in Indian history are <strong>currently serving</strong>. 
+                </p>
+              </div>
+            </div>
+          </div> <!-- #women-across-lok-sabhs -->
+          <div id="women-lok-sabha-leaders">
+            <div class="col-1-of-2 stat-num-text">
+              <div class="stat-small-number">4th, 5th, 7th</div>
+              <div class="stat-text">
+                were the Lok Sabhas where a<br/>
+                <strong>female Prime Minister</strong> served<br/>
+                <div class="stat-small-text">
+                  (<strong>Indira&nbsp;Gandhi</strong>,&nbsp;INC)
+                </div>
+              </div>
+            </div>
+            <div class="col-2-of-2 stat-num-text">
+              <div class="stat-small-number">13th &amp; 15th</div>
+              <div class="stat-text">
+                are the Lok Sabhas in which the<br/>
+                <strong>Leader of the Opposition</strong> was a woman<br/>
+                <div class="stat-small-text">
+                  (<strong>Sonia&nbsp;Gandhi</strong>,&nbsp;INC;
+                  <strong>Sushma&nbsp;Swaraj</strong>,&nbsp;BJP)
+                </div>
+              </div>
+            </div>
+          </div> <!-- #women-lok-sabha-stats -->
+        </div>
+        <div class="nav-2 shareme">
+          Share on
+ <a href="" onclick="window.open('http://twitter.com/?status=This%20week%20on%20@WeAreTheBallot:%20' + encodeURIComponent(document.getElementById('section-title').textContent) + '%20→%20' + encodeURIComponent(location.href)); return false;">Twitter</a>
+          ,
+          <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href)); return false;">Facebook</a>
+           or
+         <a href="" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href)); return false;">Google+</a>.
+          <span style="float: right">&lt; <a href="/">Previous post</a> | <a href="/lok-sabha-attendance/">Next post</a> &gt;</span>
+        </div>
+      </div>
+      <div id="sources">
+        <p>
+        Women member counts of each Lok Sabha and other statistics were compiled from the official Lok Sabha website:<br/>
+        <cite><a href="http://164.100.47.132/LssNew/Members/lokprelist.aspx?lsno=1">http://164.100.47.132/LssNew/Members/lokprelist.aspx?lsno=1</a></cite>
+        </p>
+        <p>
+        Total member counts of each Lok Sabha were obtained from the Election Commission:<br/>
+        <cite><a href="http://eci.nic.in/eci_main1/ElectionStatistics.aspx">http://eci.nic.in/eci_main1/ElectionStatistics.aspx</a></cite>
+        </p>
+        <p>Feel free to look at the calculations used for our data: <cite><a href="women-all-lok-sabhas-calculations.xls">women-all-lok-sabhas-calculations.xls</a></cite></p>
+      </div>
+      <div class="text-normal" id="relatedlinks">
+        <b class="related-heading">Related</b>&nbsp;&nbsp;&nbsp; <a href="/women-15th-lok-sabha/">Women in the current Lok Sabha</a> &middot; <a href="/election-history-lok-sabha/">Election history of the current Lok Sabha members</a> &middot; <a href="/political-parties-alliances-current-lok-sabha/">Political parties and alliances in the current Lok Sabha</a>
+      </div>
+    </div>
+  </div>
+  <div class="clearing"></div>
+  <!-- This exists purely for the sticky footer. Keep it the last div. -->
+  <div id="push"></div>
+  <div id="footer">
+    <div id="footer-wrapper">
+      <div class="nav-2" id="footer-common">
+        <span id="internal-links">Built by <a target="_blank" href="http://pareidolic.in">Pareidolic</a> · <a href="/">Home</a> · <a href="/archive/">Archive</a> · <a href="http://blog.theballot.in">Blog</a> · <a href="/disclaimer/">Disclaimer</a> · <span id="email"><a href="mailto:theballot → pareidolic.in">Contact</a></span></span>
+        <span id="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

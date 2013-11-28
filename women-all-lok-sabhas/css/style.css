@@ -1,0 +1,269 @@
+@import url("/css/common.css");
+@import url("/css/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#women-lok-sabha-chart polyline,
+#women-lok-sabha-chart line,
+#women-lok-sabha-chart rect {
+  shape-rendering: crispEdges;
+}
+
+#head-chart {
+  float: left;
+}
+
+#head-chart > div {
+  float: left;
+  margin-bottom: 55px;
+}
+
+/* Default color for SVG text */
+text:not([fill]) { fill: #404040; }
+
+div.stat-num-text {
+  text-align: center;
+}
+
+div.stat-number,
+div.stat-small-number {
+  font-family: "source-sans-pro", sans-serif;
+  color: #598E9B;
+  font-weight: 300;
+  font-size: 112pt;
+  line-height: 1.5ex;
+  margin-bottom: 35px;
+}
+
+div.stat-small-number {
+  font-size: 48pt;
+}
+
+div.stat-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+div.stat-small-text {
+  font-size: 13pt;
+  margin-top: 5px;
+}
+
+div.stat-number span.percent {
+  color: #9BC9CE;
+}
+
+/* Animated chart */
+span.percent {
+  color: #9BC9CE;
+}
+
+div#women-lok-sabha-chart {
+  margin-bottom: 20px;
+}
+
+@keyframes glow-selected-bar {
+  from { fill: #598E9B; }
+  to { fill: #8ABAC1; }
+}
+
+#women-lok-sabha-bar-chart g.chart-bars rect         { fill: #9BC9CE; }
+#women-lok-sabha-bar-chart g.chart-legend rect.women { fill: #9BC9CE; }
+#women-lok-sabha-bar-chart g.chart-bars rect.selected   { fill: #598E9B; }
+#women-lok-sabha-bar-chart g.chart-legend rect.selected { fill: #598E9B; }
+#women-lok-sabha-bar-chart g.chart-bars rect:hover,
+#women-lok-sabha-bar-chart g.chart-bars rect.hover { cursor: pointer; }
+#women-lok-sabha-bar-chart g.chart-bars rect:not(.selected):hover,
+#women-lok-sabha-bar-chart g.chart-bars rect:not(.selected).hover { fill: #7AABB4; }
+#women-lok-sabha-bar-chart g.chart-bars rect.glowing {
+  -webkit-animation: glow-selected-bar 1.2s linear 0s infinite alternate;
+     -moz-animation: glow-selected-bar 1.2s linear 0s infinite alternate;
+          animation: glow-selected-bar 1.2s linear 0s infinite alternate;
+}
+
+#women-lok-sabha-slider g.chart-labels g {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+  text-decoration: underline;
+}
+#women-lok-sabha-slider g.chart-labels g.selected {
+  font-weight: 600;
+  text-decoration: none;
+}
+#women-lok-sabha-slider g.chart-labels g:hover,
+#women-lok-sabha-slider g.chart-labels g.hover { cursor: pointer; }
+#women-lok-sabha-slider g.chart-labels g:not(.selected):hover,
+#women-lok-sabha-slider g.chart-labels g:not(.selected).hover { text-decoration: none; }
+
+#women-lok-sabha-slider #bar-chart-cursor { cursor: pointer; display: none; }
+
+div#women-lok-sabha-each {
+  padding-bottom: 20px;
+  border-bottom: dotted 1px #C0C0C0;
+}
+
+#women-lok-sabha-each #lok-sabha-name-details {
+  width: 100%;
+  float: left;
+  margin-bottom: 15px;
+  font-size: 30pt;
+  font-weight: 100;
+}
+
+#women-lok-sabha-each svg circle.female {
+  fill: #598E9B;
+  -moz-transition: fill 0.1s;
+  -webkit-transition: fill 0.1s;
+  transition: fill 0.1s;
+}
+#women-lok-sabha-each svg circle.male {
+  fill: #9BC9CE;
+  -moz-transition: fill 0.1s;
+  -webkit-transition: fill 0.1s;
+  transition: fill 0.1s;
+}
+#women-lok-sabha-each svg circle.invisible {
+  fill: white;
+  -moz-transition: fill 0.1s;
+  -webkit-transition: fill 0.1s;
+  transition: fill 0.1s;
+}
+
+#women-lok-sabha-each .chart-description {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#women-lok-sabha-each .legend-huge-text {
+  width: 100%;
+  display: block;
+  color: #598E9B;
+  text-align: center;
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  font-size: 82pt;
+  line-height: 1.5ex;
+  margin-top: 27px;
+  margin-bottom: 16px;
+}
+
+#women-lok-sabha-each #pm-gender-symbols { position: relative; }
+#women-lok-sabha-each #pm-gender-symbols > svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+#women-lok-sabha-each #pm-gender-symbols path { stroke: #598E9B; }
+/* We have to do this instead of setting stroke because that doesn't seem to
+ * work properly. I really don't want to describe what was happening. I just
+ * hate all this now. Also, we use this for sitting members spans. */
+#women-lok-sabha-each #pm-gender-symbols path:not(.selected) { display: none; }
+#women-lok-sabha-each #sitting-members-desc span[id^="ls-"]:not(.selected) { display: none; }
+#women-lok-sabha-each #pm-desc span[id$="-pm-name"]:not(.selected) { display: none; }
+
+/* Wedge chart showing women Lok Sabha member experience */
+#women-lok-sabha-term-dist {
+  position: relative;
+}
+
+#women-lok-sabha-term-dist > #women-lok-sabha-wedge-chart-text {
+  position: absolute;
+  right: 0px;
+  width: 465px;
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+#women-lok-sabha-term-dist > #women-lok-sabha-wedge-chart-text > p {
+  margin-bottom: 0.5em;
+}
+
+#women-lok-sabha-term-dist > #women-lok-sabha-wedge-chart {
+}
+
+/* Min/max elected stats */
+div.elected-stats-text {
+  font-size: 15pt;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 45px !important;
+}
+
+div.elected-stats-text p {
+  margin-bottom: 0.3em;
+}
+
+.lok-sabha-term-boxes {
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.lok-sabha-term-boxes > span {
+  display: inline-block;
+  background-color: #E4E4E4;
+  font-family: 'source-sans-pro', serif;
+  font-weight: 400;
+  font-size: 16pt;
+
+  text-align: center;
+  line-height: 1.2ex;
+  width: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 2px;
+}
+
+.lok-sabha-term-boxes > span.elected {
+  color: white;
+  background-color: #598E9B;
+}
+
+/* Pie chart with detail */
+#women-across-lok-sabhas { margin-top: 40px; }
+
+span.legend-box {
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: 'source-sans-pro', sans-serif;
+  font-weight: 900;
+  font-size: 11pt;
+  color: white;
+
+  line-height: 1.1;
+  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 8px;
+  margin-right: 6px;
+}
+
+span.legend-box.men                      { background-color: rgb(205, 205, 205); }
+#women-across-lok-sabhas path.men        { fill: rgb(224, 224, 224); }
+span.legend-box.women                    { background-color: #9BC9CE; }
+#women-across-lok-sabhas path.women      { fill: #9BC9CE; }
+span.legend-box.women-15th               { background-color: #598E9B; }
+#women-across-lok-sabhas path.women-15th { fill: #598E9B; }
+
+#women-across-chart-legend > span:last-child {
+  margin-bottom: 30px;
+}
+
+#women-across-chart-desc {
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 1.2;
+}
+
+#women-across-chart-desc p {
+  margin-bottom: 0.6em;
+}
+
+/* Summary of women leaders */
+#women-lok-sabha-leaders { }
