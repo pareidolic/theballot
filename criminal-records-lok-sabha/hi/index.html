@@ -30,20 +30,23 @@
           ((versionArray[0] < 10) ||
            (versionArray[1] < 7) ||
            (versionArray[1] == 7 && versionArray[2] < 4) ||
-           (versionArray[1] == 8 && versionArray[2] < 5))) {
+           (versionArray[1] == 8 && versionArray[2] < 4))) {
         return true;
       }
       return false;
     }
 
     function show_errors() {
-      // Indic rendering is broken on all iOS devices, as far as we know
-      if (/ip(hone|ad|od)/.test(navigator.userAgent.toLowerCase())) {
-        //document.getElementById("ios-hindi").style.display = "block";
+      var userAgent = navigator.userAgent.toLowerCase();
+      // Indic rendering is broken on all iOS versions older than 7.0
+      if (/ip(hone|ad|od)/.test(userAgent)) {
+        var versionArray = userAgent.replace(/.* os ([0-9_]+).*/, "$1").split("_");
+        if (versionArray[0] < 7)
+          document.getElementById("ios-hindi").style.display = "block";
         return;
       }
 
-      // OS X version < 10.7.4 and < 10.8.5 have broken Indic rendering
+      // OS X version < 10.7.4 and < 10.8.4 have broken Indic rendering
       if (broken_osx_browser_and_version()) {
         document.getElementById("osx-hindi").style.display = "block";
         return;
@@ -71,6 +74,9 @@
 </head>
 <body lang="hi">
   <div id="error-msges">
+    <div lang="en" id="ios-hindi">
+      To view Hindi text on this page properly, please upgrade to iOS 7.0 or higher, or use a different device.
+    </div>
     <div lang="en" id="osx-hindi">
       To view Hindi text on this page properly, please upgrade OS&nbsp;X to the latest version or use <a href="http://mozilla.com/firefox">Firefox</a>.
     </div>

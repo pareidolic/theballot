@@ -97,6 +97,12 @@ strong {
   opacity: 0.75;
 }
 
+#error-msges #ios-hindi {
+  /* No space on the sides on mobile browsers, so we attach it to the top */
+  position: absolute;
+  top: 105px;
+}
+
 #top-color-bar {
   height: 5px;
   background-color: #062F3F;
