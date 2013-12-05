@@ -84,6 +84,22 @@ cite a:lang(hi),
   font-style: normal;
 }
 
+.related-heading {
+  font-family: "Kohinoor Devanagari Bold 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
 #relatedlinks {
   display: none;
+  font-family: "Kohinoor Devanagari Light 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+#relatedlinks > a:lang(hi) {
+  /* Underline goes too far away */
+  padding-bottom: 0px;
 }

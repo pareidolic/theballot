@@ -3,3 +3,7 @@
 @import url("/css/hi/convert-local-fonts-to-web-fonts.css");
 /* vim: set sts=2 sw=2 et : */
 
+/* We have related links to show here, yey. */
+#relatedlinks {
+  display: block;
+}
