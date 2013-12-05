@@ -39,51 +39,51 @@
 
       var cursor = Snap.select("#bar-chart-cursor");
       var chart = Snap.select("#women-lok-sabha-chart");
-      var bars = Snap.selectAll("#women-lok-sabha-bar-chart .chart-bars > rect");
       var eachLS = Snap.select("#women-lok-sabha-each svg");
-      var chartDesc = Snap.select("#women-lok-sabha-each .chart-description");
 
+      var bars = Snap.selectAll("#women-lok-sabha-bar-chart .chart-bars > rect");
+      var barsMinMax = Snap.selectAll("#women-lok-sabha-bar-chart .chart-bar-labels > text");
       var labels = Snap.select("#women-lok-sabha-slider .chart-labels");
       var labelsText = labels.selectAll("g");
 
-      /* Hookup events */
+      /** START: Hookup events **/
       chart.hover(
         function() {
           var classes = (chart.select(".glowing").attr("class") || "").replace("glowing", "");
-          /* Stop glowing on hover */
+          /* Stop glowing on hoverin */
           chart.select(".glowing").attr({"class": "hover "+classes})
         },
         function() {
           var classes = (chart.select(".selected").attr("class") || "") + " glowing";
-          /* Stop glowing on hover */
+          /* Re-start glowing on hoverout */
           chart.select(".selected").attr({"class": "hover "+classes})
-        });
+        }
+      );
+      /* Define behaviour on hover-in and hover-out for chart bars and labels */
+      onHoverIn = function() {
+        var classes = this.elements[this.index].attr("class") || "";
+        this.elements[this.index].attr({"class": "hover "+classes})
+      };
+      onHoverOut = function() {
+        var classes = (this.elements[this.index].attr("class") || "").replace("hover", "");
+        this.elements[this.index].attr({"class": classes})
+      };
+      /* Hookup highlight/select events */
+      barsMinMax[0].click(bar_selected, {index: 5});
+      barsMinMax[1].click(bar_selected, {index: 14});
       for (i = 0; i < bars.length; i++) {
         bars[i].click(bar_selected, {index: i});
         labelsText[i].click(bar_selected, {index: i});
-        /* Highlight on hover */
-        bars[i].hover(
-          function() {
-            var classes = labelsText[this.index].attr("class") || "";
-            labelsText[this.index].attr({"class": "hover "+classes})
-          },
-          function() {
-            var classes = (labelsText[this.index].attr("class") || "").replace("hover", "");
-            labelsText[this.index].attr({"class": classes})
-          },
-          {index: i});
-        /* Highlight on hover */
-        labelsText[i].hover(
-          function() {
-            var classes = bars[this.index].attr("class") || "";
-            bars[this.index].attr({"class": "hover "+classes})
-          },
-          function() {
-            var classes = (bars[this.index].attr("class") || "").replace("hover", "");
-            bars[this.index].attr({"class": classes})
-          },
-          {index: i});
+        bars[i].hover(onHoverIn, onHoverOut,{index: i, elements: labelsText});
+        labelsText[i].hover(onHoverIn, onHoverOut,{index: i, elements: bars});
       }
+      /* When hovering on the labels on the bar charts, highlight both the bars 
+       * and the labels underneath them */
+      barsMinMax[0].hover(onHoverIn, onHoverOut, {index: 5, elements: bars});
+      barsMinMax[0].hover(onHoverIn, onHoverOut, {index: 5, elements: labelsText});
+      barsMinMax[1].hover(onHoverIn, onHoverOut, {index: 14, elements: bars});
+      barsMinMax[1].hover(onHoverIn, onHoverOut, {index: 14, elements: labelsText});
+      /** END: Hookup events **/
 
       /*var lx = 0, ly = 0, ox = 0, oy = 0;
       var moveFnc = function(dx, dy, x, y) {
@@ -120,6 +120,11 @@
 
         /* Update the chart description */
         function update_chart_desc() {
+          var forEachInnerHTML = function(elements, value) {
+            for (var i = 0; i < elements.length; ++i)
+              elements[i].innerHTML = value;
+          };
+
           document.getElementsByClassName("women-count")[0].innerHTML = w[j][0];
           document.getElementsByClassName("total-count")[0].innerHTML = w[j][1];
           document.getElementsByClassName("women-percent")[0].innerHTML = (w[j][0]/ w[j][1] * 100).toFixed(1);
@@ -128,10 +133,10 @@
           document.getElementsByClassName("lok-sabha-nth")[0].innerHTML = labels.select("g:nth-child("+(j+1)+") html\\:u").innerSVG();
           /* Current and past */
           if (j+1 == 15) {
-            document.getElementsByClassName("lok-sabha-tense")[0].innerHTML = "are";
+            forEachInnerHTML(document.getElementsByClassName("lok-sabha-tense"), "are");
             document.getElementById("pm-tense").innerHTML = "is";
           } else {
-            document.getElementsByClassName("lok-sabha-tense")[0].innerHTML = "were";
+            forEachInnerHTML(document.getElementsByClassName("lok-sabha-tense"), "were");
             document.getElementById("pm-tense").innerHTML = "was";
           }
           /* Highest and lowest */
@@ -141,28 +146,19 @@
             document.getElementById("lok-sabha-high-low").innerHTML = " — the <strong>lowest</strong>";
           else
             document.getElementById("lok-sabha-high-low").innerHTML = "<br>&nbsp;";
-          /* Speaker */
+          /* Speaker/Opposition members (sitting members) */
           if ((j+1) == 13) {
             document.getElementById("sitting-members-count").innerHTML = "1";
-            document.getElementById("sitting-members-count-text").innerHTML = "one";
-            document.getElementById("sitting-members-tense").innerHTML = "was";
-            document.getElementById("sitting-members-quantity-suffix").innerHTML = "";
             document.getElementById("ls-others").className = "";
             document.getElementById("ls-13").className = "selected";
             document.getElementById("ls-15").className = "";
           } else if ((j+1) == 15) {
             document.getElementById("sitting-members-count").innerHTML = "2";
-            document.getElementById("sitting-members-count-text").innerHTML = "two";
-            document.getElementById("sitting-members-tense").innerHTML = "are";
-            document.getElementById("sitting-members-quantity-suffix").innerHTML = "s";
             document.getElementById("ls-others").className = "";
             document.getElementById("ls-13").className = "";
             document.getElementById("ls-15").className = "selected";
           } else {
             document.getElementById("sitting-members-count").innerHTML = "0";
-            document.getElementById("sitting-members-count-text").innerHTML = "no";
-            document.getElementById("sitting-members-tense").innerHTML = "were";
-            document.getElementById("sitting-members-quantity-suffix").innerHTML = "s";
             document.getElementById("ls-others").className = "selected";
             document.getElementById("ls-13").className = "";
             document.getElementById("ls-15").className = "";
@@ -264,6 +260,10 @@
               <text x="32" y="15" font-family="'Adelle-Regular'" font-size="14">Women MPs in each Lok Sabha (%age)</text>
               <text x="923" y="15" text-anchor="end" font-family="'Adelle-Regular'" font-size="14">Click on a bar to see details about that Lok Sabha</text>
             </g>
+            <g class="chart-bar-labels">
+              <text transform="matrix(0 -1 1 0 346 245)" text-anchor="middle" fill="white" font-family="'SourceSansPro-Black'" font-size="16">3.9%</text>
+              <text transform="matrix(0 -1 1 0 902 104)" text-anchor="middle" fill="white" font-family="'SourceSansPro-Black'" font-size="16">11.6%</text>
+            </g>
             </svg>
             
             <svg id="women-lok-sabha-slider" width="930px" height="44px" viewBox="-1 -1 930 44" xml:space="preserve" xmlns:html="http://www.w3.org/1999/xhtml">
@@ -331,10 +331,9 @@
               or, <strong class="women-count">45</strong> out of <strong class="total-count">541</strong> MPs <span class="lok-sabha-tense">were</span> women<span id="lok-sabha-high-low"><br>&nbsp;</span>
             </div>
             <div class="col-2-of-3 chart-description">
-              <div id="sitting-members-count" class="legend-huge-text">0</div>
+              <div class="legend-huge-text"><span id="sitting-members-count">0</span><span class="legend-huge-text-connector">out of</span><span>5</span></div>
               <div id="sitting-members-desc">
-                There&nbsp;<span id="sitting-members-tense">were</span>&nbsp;<strong id="sitting-members-count-text">no</strong>&nbsp;female
-                sitting&nbsp;member<span id="sitting-members-quantity-suffix">s</span>
+                Sitting members <span class="lok-sabha-tense">were</span> women
                 <div class="stat-small-text">
                   <span id="ls-others" class="selected">
                     <!-- Four lines of empty space -->

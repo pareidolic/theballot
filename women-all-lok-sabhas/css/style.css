@@ -71,6 +71,7 @@ div#women-lok-sabha-chart {
 #women-lok-sabha-bar-chart g.chart-legend rect.women { fill: #9BC9CE; }
 #women-lok-sabha-bar-chart g.chart-bars rect.selected   { fill: #598E9B; }
 #women-lok-sabha-bar-chart g.chart-legend rect.selected { fill: #598E9B; }
+#women-lok-sabha-bar-chart g.chart-bar-labels text:hover,
 #women-lok-sabha-bar-chart g.chart-bars rect:hover,
 #women-lok-sabha-bar-chart g.chart-bars rect.hover { cursor: pointer; }
 #women-lok-sabha-bar-chart g.chart-bars rect:not(.selected):hover,
@@ -149,6 +150,22 @@ div#women-lok-sabha-each {
   line-height: 1.5ex;
   margin-top: 27px;
   margin-bottom: 16px;
+  vertical-align: middle;
+}
+
+/* All sibling elements after the sitting members count */
+#women-lok-sabha-each #sitting-members-count ~ * {
+  color: #9BC9CE;
+}
+
+#women-lok-sabha-each .legend-huge-text-connector {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 24pt;
+  font-weight: 400;
 }
 
 #women-lok-sabha-each #pm-gender-symbols { position: relative; }
