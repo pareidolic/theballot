@@ -3,11 +3,11 @@
 <!-- vim: set sts=2 sw=2 et tw=0 : -->
 <head>
   <meta charset="UTF-8">
-  <title>The Ballot — Women in the current Lok Sabha</title>
+  <title>The Ballot — वर्तमान लोक सभा के महिला सांसद</title>
   <link rel="shortcut icon" href="/favicon.ico?1" />
   <link rel="image_src" href="/banners/the-b.png" />
   <meta property="og:image" content="http://theballot.in/banners/the-b.png" />
-  <meta property="og:description" content="From the beginning, the proportion of women and men in the Lok Sabha has been skewed — the representation of women in the Lok Sabha has never really matched their ratio in the population of India as a whole. And although we are yet to achieve that, the current Lok Sabha has the highest number of women in history." />
+  <meta property="og:description" content="शुरुआत से ही लोक सभा में महिला व पुरुष सदस्यों का अनुपात असमान रहा है — लोक सभा में यह अनुपात कुल जनसंख्या के अनुपात से बहुत कम है। आज भी महिला व पुरुष सांसदों की संख्या बराबर नहीं है, लेकिन इस लोक सभा में महिलाओं की संख्या अब तक की सबसे अधिक है।" />
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="http://fonts.indiantypefoundry.com/WF-019442-000494.css" type="text/css" />
   <script type="text/javascript" src="//use.typekit.net/ahb7pnz.js"></script>
@@ -20,7 +20,45 @@
         "pareidolic.in'>Contact</a>";
     }
 
-    window.onload = add_email;
+    function broken_osx_browser_and_version() {
+      var userAgent = navigator.userAgent.toLowerCase();
+      if (!/mac os x/.test(userAgent)) {
+        return false;
+      }
+      var versionArray = userAgent.replace(/.*mac os x ([0-9_]+).*/, "$1").split("_");
+      if (/applewebkit/.test(userAgent) &&
+          ((versionArray[0] < 10) ||
+           (versionArray[1] < 7) ||
+           (versionArray[1] == 7 && versionArray[2] < 4) ||
+           (versionArray[1] == 8 && versionArray[2] < 4))) {
+        return true;
+      }
+      return false;
+    }
+
+    function show_errors() {
+      var userAgent = navigator.userAgent.toLowerCase();
+      // Indic rendering is broken on all iOS versions older than 7.0
+      if (/ip(hone|ad|od)/.test(userAgent)) {
+        var versionArray = userAgent.replace(/.* os ([0-9_]+).*/, "$1").split("_");
+        if (versionArray[0] < 7)
+          document.getElementById("ios-hindi").style.display = "block";
+        return;
+      }
+
+      // OS X version < 10.7.4 and < 10.8.4 have broken Indic rendering
+      if (broken_osx_browser_and_version()) {
+        document.getElementById("osx-hindi").style.display = "block";
+        return;
+      }
+    }
+
+    function do_onload() {
+      add_email();
+      show_errors();
+    }
+
+    window.onload = do_onload;
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-43617415-1']);
@@ -34,35 +72,43 @@
 
   </script>
 </head>
-<body lang="en">
+<body lang="hi">
+  <div id="error-msges">
+    <div lang="en" id="ios-hindi">
+      To view Hindi text on this page properly, please upgrade to iOS 7.0 or higher, or use a different device.
+    </div>
+    <div lang="en" id="osx-hindi">
+      To view Hindi text on this page properly, please upgrade OS&nbsp;X to the latest version or use <a href="http://mozilla.com/firefox">Firefox</a>.
+    </div>
+  </div>
   <div id="top-color-bar"></div>
   <div id="wrapper">
-    <div id="nav-bar">
+    <div id="nav-bar" lang="en">
       <a href="/"><span class="nav-1" id="homelink">The Ballot</span></a>
       <a href="http://blog.theballot.in"><span class="nav-1" id="bloglink">Blog</span></a>
       <a href="/archive/"><span class="nav-1" id="archivelink">Archive</span></a>
-      <a href="hi/"><span class="nav-1-hi" id="hindilink">हिन्दी में पढ़ें</span></a>
+      <a href="../"><span class="nav-1" id="englishlink">Read in English</span></a>
     </div>
     <div id="content">
       <div id="text">
-        <h1 id="section-title">Women in the current Lok Sabha</h1>
-        <div id="left-arrow"><a href="/pm-timeline/" title="Previous post">&lsaquo;</a></div>
-        <div id="right-arrow"><a href="/ordinary-bill-to-act/" title="Next post">&rsaquo;</a></div>
+        <h1 id="section-title">वर्तमान लोक सभा के महिला सांसद</h1>
+        <div id="left-arrow"><a href="/pm-timeline/hi/" title="पिछला लेखाचित्र">&lsaquo;</a></div>
+        <div id="right-arrow"><a href="/ordinary-bill-to-act/" title="अगला लेखाचित्र">&rsaquo;</a></div>
         <div id="section-desc">
-          From the beginning, the proportion of women and men in the Lok Sabha has been skewed — the representation of women in the Lok Sabha has never really matched their ratio in the population of India as a whole. And although we are yet to achieve that, the current Lok Sabha has the highest number of women in history. 
+          शुरुआत से ही लोक सभा में महिला व पुरुष सदस्यों का अनुपात असमान रहा है — लोक सभा में यह अनुपात कुल जनसंख्या के अनुपात से बहुत कम है। आज भी महिला व पुरुष सांसदों की संख्या बराबर नहीं है, लेकिन इस लोक सभा में महिलाओं की संख्या अब तक की सबसे अधिक है।
         </div>
         <div class="nav-2 shareme">
-          Share on
-          <a href="" onclick="window.open('http://twitter.com/?status=This%20week%20on%20@WeAreTheBallot:%20' + encodeURIComponent(document.getElementById('section-title').textContent) + '%20→%20' + encodeURIComponent(location.href)); return false;">Twitter</a>
-          ,
-          <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href)); return false;">Facebook</a>
-           or
-         <a href="" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href)); return false;">Google+</a>.
-          <span style="float: right">&lt; <a href="/pm-timeline/">Previous post</a> | <a href="/ordinary-bill-to-act/">Next post</a> &gt;</span>
+          दोस्तों को इसके बारे में
+          <a href="" onclick="window.open('http://twitter.com/?status=This%20week%20on%20@WeAreTheBallot:%20' + encodeURIComponent(document.getElementById('section-title').textContent) + '%20→%20' + encodeURIComponent(location.href)); return false;">ट्विटर</a>,
+          <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href)); return false;">फ़ेसबुक</a>
+          या
+          <a href="" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href)); return false;">गूगल+</a>
+          पर बताऐं।
+          <span style="float: right">&lt; <a href="/pm-timeline/hi/">पिछला लेखाचित्र</a> | <a href="/ordinary-bill-to-act/">अगला लेखाचित्र</a> &gt;</span>
         </div>
       </div>
       <div class="visual">
-        <div class="text-normal" id="unsupported-msg">
+        <div class="text-normal" id="unsupported-msg" lang="en">
           <div id="sadface">☹</div>
           <p>Your browser doesn't support <a href="http://en.wikipedia.org/wiki/SVG">Inline SVG</a>, but we use it for all our graphs and charts. Please upgrade your browser, or use the latest versions of <a href="http://www.mozilla.org/firefox">Firefox</a> or <a href="www.google.com/chrome">Chrome</a>!</p><br/>
         </div>
@@ -85,7 +131,7 @@
               </g>
               </svg>
               <div class="pie-chart-heading">
-                <span>In India</span>
+                <span>भारत में</span>
               </div>
             </div>
             <div id="pie-chart-ls-women" class="col-2-of-3">
@@ -103,21 +149,16 @@
               </g>
               </svg>
               <div class="pie-chart-heading">
-                <span>In the Lok Sabha</span>
+                <span>लोक सभा में</span>
               </div>
             </div>
             <div id="pie-chart-text" class="col-3-of-3">
               <div>
-                <span class="legend-women-box">WOMEN</span><!--
-             --><span class="legend-men-box">MEN</span>
+                <span class="legend-women-box">महिला</span><!--
+             --><span class="legend-men-box">पुरुष</span>
               </div>
               <div id="legend-text">
-                At&nbsp;63&nbsp;out&nbsp;of&nbsp;543,&nbsp;or
-                <span id="legend-huge-text">11.6<span class="percent">%</span></span>
-                the&nbsp;<strong>current&nbsp;Lok
-                Sabha&nbsp;has&nbsp;the
-                highest&nbsp;number&nbsp;of
-                women</strong>&nbsp;in&nbsp;it.
+                543 में से 63, या <span id="legend-huge-text">11.6<span class="percent">%</span></span> महिला सांसदों के साथ, <strong>वर्तमान लोक सभा में महिलाओं की संख्या सबसे अधिक है। </strong>
               </div>
             </div>
           </div>
@@ -125,36 +166,29 @@
           <div id="india-map">
             <div id="india-map-text" class="single-col-left">
               <div id="india-map-text-1">
-                Out&nbsp;of&nbsp;India’s
-                twenty-eight&nbsp;states
-                and&nbsp;seven&nbsp;union
-                territories,
+                भारत के अट्ठाईस राज्यों और सात संघ राष्ट्रक्षेत्रों में
               </div>
               <div id="india-map-text-2">
-                <span>almost</span><span>½</span>
+                <span>लगभग</span><span>½</span>
               </div>
               <div id="india-map-text-3">
-                <strong>
-                do&nbsp;not&nbsp;have&nbsp;a&nbsp;woman
-                representative&nbsp;in&nbsp;the
-                Lok&nbsp;Sabha
-                </strong>
+                से लोक सभा में <strong>कोई भी महिला प्रतिनिधि नहीं है।</strong>
               </div>
               <div id="india-map-legend">
                 <div id="india-map-legend-none">
-                  No women representatives
+                  एक भी महिला प्रतिनिधि नहीं
                 </div>
                 <div id="india-map-legend-less">
-                  Less than 5% of MPs are women
+                  5% से कम महिला सांसद
                 </div>
                 <div id="india-map-legend-5">
-                  5–15% of MPs are women
+                  5–15% महिला सांसद
                 </div>
                 <div id="india-map-legend-15">
-                  15–25% of MPs are women
+                  15–25% महिला सांसद
                 </div>
                 <div id="india-map-legend-more">
-                  More than 25% of MPs are women
+                  25% से अधिक महिला सांसद
                 </div>
               </div>
             </div>
@@ -2941,24 +2975,19 @@
             <div id="stat-1" class="col-1-of-3">
               <div class="stat-number">51</div>
               <div class="stat-text">
-                is&nbsp;the&nbsp;<strong>average&nbsp;age&nbsp;of&nbsp;women</strong>
-                MPs&nbsp;in&nbsp;the&nbsp;Lok&nbsp;Sabha
-                (against&nbsp;58&nbsp;years&nbsp;for&nbsp;men)
+                लोक सभा के <strong>महिला सांसदों की औसत आयु</strong> है (पुरुष सांसदों की औसत आयु 58 के मुकाबले)
               </div>
             </div>
             <div id="stat-2" class="col-2-of-3">
               <div class="stat-number">18<span class="percent">%</span></div>
               <div class="stat-text">
-                of&nbsp;women&nbsp;MPs&nbsp;have&nbsp;<strong>only
-                been&nbsp;to&nbsp;school</strong>
+                महिला लोक सभा सांसद <strong>केवल स्कूल तक</strong> पढ़ी हैं
               </div>
             </div>
             <div id="stat-3" class="col-3-of-3">
               <div class="stat-number">38<span class="percent">%</span></div>
               <div class="stat-text">
-                women&nbsp;MPs&nbsp;have&nbsp;studied&nbsp;to
-                <strong>post&nbsp;graduate&nbsp;or&nbsp;higher
-                educational&nbsp;levels</strong>
+                ने <strong>स्नातकोतर या उससे अधिक</strong> शिक्षा प्राप्त की है
               </div>
             </div>
           </div>
@@ -2976,50 +3005,46 @@
             </div>
             <div class="double-col-right">
               <div id="sitting-members-legend">
-                <span class="legend-women-box">WOMEN</span><!--
-             --><span class="legend-men-box">MEN</span>
+                <span class="legend-women-box">महिला</span><!--
+             --><span class="legend-men-box">पुरुष</span>
               </div>
               <div id="sitting-members-heading">
-                Of the five Sitting Members of the Lok Sabha, <strong>two are currently women</strong>
+                इस लोक सभा के पाँच वर्तमान सदस्यों में से <strong>दो महिलाएँ हैं</strong>
               </div>
               <div class="sitting-members-text">
-                <strong>Sushma Swaraj</strong> (Bharatiya Janta Party)
-                elected from Vidisha (Madhya Pradesh) is the
-                <strong>Leader of the Opposition.</strong>
+                विदिशा (मध्‍य प्रदेश) से निर्वाचित <strong>सुषमा स्वराज</strong> (भारतीय जनता पार्टी) लोक सभा में <strong>विपक्ष की नेता</strong> हैं।
               </div>
               <div class="sitting-members-text">
-                <strong>Meira Kumar</strong> (Indian National Congress)
-                elected from Sasaram (Bihar) is the <strong>Speaker
-                of the House.</strong>
+                सासाराम (बिहार) से निर्वाचित <strong>मीरा कुमार</strong> (भारतीय राष्ट्रीय कांग्रेस) <strong>लोक सभा की अध्यक्ष</strong> हैं।
               </div>
             </div>
           </div>
 
         </div>
         <div class="nav-2 shareme">
-          Share on
- <a href="" onclick="window.open('http://twitter.com/?status=This%20week%20on%20@WeAreTheBallot:%20' + encodeURIComponent(document.getElementById('section-title').textContent) + '%20→%20' + encodeURIComponent(location.href)); return false;">Twitter</a>
-          ,
-          <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href)); return false;">Facebook</a>
-           or
-         <a href="" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href)); return false;">Google+</a>.
-          <span style="float: right">&lt; <a href="/pm-timeline/">Previous post</a> | <a href="/ordinary-bill-to-act/">Next post</a> &gt;</span>
+          दोस्तों को इसके बारे में
+          <a href="" onclick="window.open('http://twitter.com/?status=This%20week%20on%20@WeAreTheBallot:%20' + encodeURIComponent(document.getElementById('section-title').textContent) + '%20→%20' + encodeURIComponent(location.href)); return false;">ट्विटर</a>,
+          <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href)); return false;">फ़ेसबुक</a>
+          या
+          <a href="" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href)); return false;">गूगल+</a>
+          पर बताऐं।
+          <span style="float: right">&lt; <a href="/pm-timeline/hi/">पिछला लेखाचित्र</a> | <a href="/ordinary-bill-to-act/">अगला लेखाचित्र</a> &gt;</span>
         </div>
       </div>
       <div id="sources">
-        Data about India's population was obtained from figures of the 2011 census: <cite><a href="http://www.devinfo.org/indiacensuspopulationtotals2011/stock/data/CSV_DataFiles/CensusInfo%20India%202011%20%20Provisional%20Population%20Totals_2012_en.zip">http://www.devinfo.org/indiacensuspopulationtotals2011/stock/data/CSV_DataFiles/CensusInfo India 2011  Provisional Population Totals_2012_en.zip</a></cite><br/>
+        भारत की जनसंख्या के आँकड़े 2011 की जनगणना से लिए गए हैं — <cite lang="en"><a href="http://www.devinfo.org/indiacensuspopulationtotals2011/stock/data/CSV_DataFiles/CensusInfo%20India%202011%20%20Provisional%20Population%20Totals_2012_en.zip">http://www.devinfo.org/indiacensuspopulationtotals2011/stock/data/CSV_DataFiles/CensusInfo India 2011  Provisional Population Totals_2012_en.zip</a></cite><br/>
         <br/>
-        Data regarding the Lok Sabha members, the states and union territories of their election, their age and educational qualifications was compiled from the official Lok Sabha website:<br/>
-        <cite><a href="http://164.100.47.132/LssNew/Members/women.aspx">http://164.100.47.132/LssNew/Members/women.aspx</a></cite><br/>
-        <cite><a href="http://164.100.47.132/LssNew/Members/MemberSearchByAge.aspx">http://164.100.47.132/LssNew/Members/MemberSearchByAge.aspx</a></cite><br/>
-        <cite><a href="http://164.100.47.132/LssNew/Members/MemberSearchByQualification.aspx">http://164.100.47.132/LssNew/Members/MemberSearchByQualification.aspx</a></cite><br/>
-        <cite><a href="http://164.100.47.132/LssNew/members/sittingmember.aspx">http://164.100.47.132/LssNew/members/sittingmember.aspx</a></cite><br/>
+        लोक सभा सांसद, उनके निर्वाचन के राज्य व संघ राष्ट्रक्षेत्र, आयु और शैक्षणिक योग्यता से संबंधित आँकड़े आधिकारिक लोक सभा वेबसाइट से लिए गए हैं — <br/>
+        <cite lang="en"><a href="http://164.100.47.132/LssNew/Members/women.aspx">http://164.100.47.132/LssNew/Members/women.aspx</a></cite><br/>
+        <cite lang="en"><a href="http://164.100.47.132/LssNew/Members/MemberSearchByAge.aspx">http://164.100.47.132/LssNew/Members/MemberSearchByAge.aspx</a></cite><br/>
+        <cite lang="en"><a href="http://164.100.47.132/LssNew/Members/MemberSearchByQualification.aspx">http://164.100.47.132/LssNew/Members/MemberSearchByQualification.aspx</a></cite><br/>
+        <cite lang="en"><a href="http://164.100.47.132/LssNew/members/sittingmember.aspx">http://164.100.47.132/LssNew/members/sittingmember.aspx</a></cite><br/>
         <br/>
-        The map of India seen here is a derivative of the map of India on Wikimedia Commons:<br/>
-        <cite><a href="http://commons.wikimedia.org/wiki/File:India-locator-map-blank.svg">http://commons.wikimedia.org/wiki/File:India-locator-map-blank.svg</a></cite><br/>
+        यहाँ इस्तेमाल भारत का नक्षा विकिमीडिया कॉमन्ज़ पर उपलब्ध इस नक्षे को मूल लेकर बनाया गया है — <br/>
+        <cite lang="en"><a href="http://commons.wikimedia.org/wiki/File:India-locator-map-blank.svg">http://commons.wikimedia.org/wiki/File:India-locator-map-blank.svg</a></cite><br/>
         <br/>
-        When calculating the average age of female Lok Sabha members, data for one MP, Kaisar Jahan, was missing.<br/>
-        Since nominated members are not elected, they were not included in the map of women representatives from states and UTs.<br/>
+        लोक सभा के महिला सांसदों की औसत आयु की गणना में एक सांसद, कैसर जहाँ, के आँकड़े उपलब्ध नहीं थे।<br/>
+        चूंकि नामित सदस्य निर्वाचित नहीं होते हैं, इसलिए उन्हे राज्यों व संघ राष्ट्रक्षेत्रों के महिला प्रतिनिधियों के नक्षे में शामिल नहीं किया गया है।<br/>
       </div>
       <div class="text-normal" id="relatedlinks">
         <b class="related-heading">Related</b>&nbsp;&nbsp;&nbsp;<a href="/election-history-lok-sabha/">Election history of the current Lok Sabha members</a> &middot; <a href="/lok-sabha-ages/">Ages of Lok Sabha members and the general population</a> &middot; <a href="/political-parties-alliances-current-lok-sabha/">Political parties and alliances in the current Lok Sabha</a>
@@ -3029,7 +3054,7 @@
   <div class="clearing"></div>
   <!-- This exists purely for the sticky footer. Keep it the last div. -->
   <div id="push"></div>
-  <div id="footer">
+  <div id="footer" lang="en">
     <div id="footer-wrapper">
       <div class="nav-2" id="footer-common">
         <span id="internal-links">Built by <a target="_blank" href="http://pareidolic.in">Pareidolic</a> · <a href="/">Home</a> · <a href="/archive/">Archive</a> · <a href="http://blog.theballot.in">Blog</a> · <a href="/disclaimer/">Disclaimer</a> · <span id="email"><a href="mailto:theballot → pareidolic.in">Contact</a></span></span>

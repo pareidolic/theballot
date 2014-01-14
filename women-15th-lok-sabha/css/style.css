@@ -100,14 +100,12 @@ span.legend-men-box {
   font-weight: 400;
   font-size: 46pt;
   width: 70%;
-  text-align: left;
 }
 
 #india-map div#india-map-text-2 > span:last-child {
   font-weight: 300;
   font-size: 86pt;
   width: 30%;
-  text-align: right;
 }
 
 #india-map div#india-map-text-3 {

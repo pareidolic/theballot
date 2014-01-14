@@ -1,0 +1,52 @@
+@import url("../../css/style.css");
+@import url("/css/hi/common.css");
+@import url("/css/hi/convert-local-fonts-to-web-fonts.css");
+/* vim: set sts=2 sw=2 et : */
+
+#pie-chart-text > #legend-text > span#legend-huge-text {
+  display: block;
+  color: #598E9B;
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  font-size: 82pt;
+  line-height: 1.5ex;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+span.legend-women-box,
+span.legend-men-box {
+  font-family: "Kohinoor Devanagari Bold 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+
+  padding-top: 14px;
+  padding-bottom: 10px;
+}
+
+#india-map div#india-map-text-2 > span:first-child {
+  font-family: "Kohinoor Devanagari Book 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 48pt;
+  width: 62%;
+}
+
+#india-map div#india-map-text-2 > span:last-child {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 38%;
+}
+
+#india-map div#india-map-legend {
+  color: white;
+    font-family: "Kohinoor Devanagari Demi 2";
+  font-size: 11pt;
+}
+
+#india-map div#india-map-legend > div {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
