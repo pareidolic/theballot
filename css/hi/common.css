@@ -63,6 +63,13 @@ h1 {
   font-size: 16pt;
 }
 
+.pie-chart-heading {
+  font-family: "Kohinoor Devanagari Demi 2";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
 cite:lang(hi),
 cite a:lang(hi),
 #sources:lang(hi),
