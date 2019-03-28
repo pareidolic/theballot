@@ -31,9 +31,9 @@
 }
 
 .archive-post a:lang(hi) {
-  font-family: "Kohinoor Devanagari Demi 2";
+  font-family: "Mukta";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-stretch: normal;
   padding-bottom: 0px;
 }

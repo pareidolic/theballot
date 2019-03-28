@@ -16,9 +16,9 @@
 
 span.legend-women-box,
 span.legend-men-box {
-  font-family: "Kohinoor Devanagari Bold 2";
+  font-family: "Mukta";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   font-stretch: normal;
 
   padding-top: 14px;
@@ -26,9 +26,9 @@ span.legend-men-box {
 }
 
 #india-map div#india-map-text-2 > span:first-child {
-  font-family: "Kohinoor Devanagari Book 2";
+  font-family: "Mukta";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-stretch: normal;
   font-size: 48pt;
   width: 62%;
@@ -42,7 +42,8 @@ span.legend-men-box {
 
 #india-map div#india-map-legend {
   color: white;
-    font-family: "Kohinoor Devanagari Demi 2";
+  font-family: "Mukta";
+  font-weight: 500;
   font-size: 11pt;
 }
 
